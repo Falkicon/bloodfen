@@ -1,1 +1,59 @@
- 
+ name: Deploy Hugo site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      # Explicitly disable Git submodule functionality before checkout
+      - name: Disable Git submodules globally
+        run: |
+          git config --global core.ignoreSubmodules all
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: false  # Don't fetch Hugo themes as submodules
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          
+      # Create an empty .gitmodules file to prevent Git from looking for submodules
+      - name: Create empty .gitmodules file
+        run: |
+          touch .gitmodules
+          git config --local --unset-all submodule.active || true
+          
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          # The action defaults to search for the dependency file (package-lock.json,
+          # npm-shrinkwrap.json or yarn.lock) in the repository root, and uses its
+          # hash as a part of the cache key.
+          cache-dependency-path: 'bloodfen-wow-guides/package-lock.json'
+
+      - name: Install dependencies
+        run: cd bloodfen-wow-guides && npm ci
+
+      - name: Build
+        run: cd bloodfen-wow-guides && hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./bloodfen-wow-guides/public

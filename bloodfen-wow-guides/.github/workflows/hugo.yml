@@ -56,4 +56,4 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./bloodfen-wow-guides/public 
+          publish_dir: ./bloodfen-wow-guides/public # Trigger GitHub to recognize this workflow file again 

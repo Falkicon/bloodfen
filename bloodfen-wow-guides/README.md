@@ -1,6 +1,22 @@
-# Bloodfen WoW Guides
+# Bloodfen Guides
 
-A comprehensive collection of World of Warcraft guides built with Hugo, focusing on "The War Within" expansion.
+A comprehensive collection of guides for World of Warcraft: The War Within expansion.
+
+## Development
+
+This site is built with Hugo and deployed using GitHub Pages.
+
+To run the development server locally:
+
+```bash
+cd bloodfen-wow-guides
+npm install
+npm run dev
+```
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
 
 ## Getting Started
 

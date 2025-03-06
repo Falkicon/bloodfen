@@ -14,14 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: false  # Don't fetch Hugo themes as submodules
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          extended: true
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -44,4 +42,5 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./bloodfen-wow-guides/public
+          publish_dir: ./bloodfen-wow-guides/public 
+"          submodules: false  # Don't fetch Hugo themes as submodules"  

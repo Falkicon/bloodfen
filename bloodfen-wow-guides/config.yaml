@@ -1,6 +1,7 @@
 baseURL: "https://falkicon.github.io/bloodfen/"
 languageCode: "en-us"
 title: "Bloodfen Guides"
+theme: "spectral"
 
 # Disable Google Analytics
 googleAnalytics: ""

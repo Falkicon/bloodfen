@@ -1,0 +1,196 @@
+/* 
+ * Bloodfen Guides - Table Styles
+ * Contains all table-related styles
+ */
+
+/* Base table */
+.bf-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #4a4a4a;
+  border-radius: var(--bf-border-radius);
+  overflow: hidden;
+}
+
+/* Table header */
+.bf-table th {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--bf-highlight);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 2px solid var(--bf-highlight);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+/* Table cells */
+.bf-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #4a4a4a;
+  color: var(--bf-text-primary);
+}
+
+/* Table row hover */
+.bf-table tr:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+/* Last row */
+.bf-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Striped table */
+.bf-table-striped tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bf-table-striped tr:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+/* Bordered table */
+.bf-table-bordered th,
+.bf-table-bordered td {
+  border: 1px solid #4a4a4a;
+}
+
+/* Compact table */
+.bf-table-compact th,
+.bf-table-compact td {
+  padding: 0.5rem 0.75rem;
+}
+
+/* Responsive table */
+.bf-table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
+/* Table caption */
+.bf-table caption {
+  padding: 0.75rem 1rem;
+  caption-side: bottom;
+  text-align: left;
+  color: var(--bf-text-secondary);
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+/* Table with fixed layout */
+.bf-table-fixed {
+  table-layout: fixed;
+}
+
+/* Table column widths */
+.bf-table .w-10 { width: 10%; }
+.bf-table .w-20 { width: 20%; }
+.bf-table .w-25 { width: 25%; }
+.bf-table .w-30 { width: 30%; }
+.bf-table .w-33 { width: 33.333%; }
+.bf-table .w-40 { width: 40%; }
+.bf-table .w-50 { width: 50%; }
+.bf-table .w-60 { width: 60%; }
+.bf-table .w-70 { width: 70%; }
+.bf-table .w-75 { width: 75%; }
+.bf-table .w-80 { width: 80%; }
+.bf-table .w-90 { width: 90%; }
+.bf-table .w-100 { width: 100%; }
+
+/* Table cell alignment */
+.bf-table .text-left { text-align: left; }
+.bf-table .text-center { text-align: center; }
+.bf-table .text-right { text-align: right; }
+
+/* Table cell vertical alignment */
+.bf-table .align-top { vertical-align: top; }
+.bf-table .align-middle { vertical-align: middle; }
+.bf-table .align-bottom { vertical-align: bottom; }
+
+/* Table with sticky header */
+.bf-table-sticky-header {
+  position: relative;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.bf-table-sticky-header th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* WoW-specific tables */
+.bf-table-wow {
+  border: 1px solid #333;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+}
+
+.bf-table-wow th {
+  background: linear-gradient(to bottom, #333, #222);
+  color: var(--bf-highlight);
+  border-bottom: 1px solid var(--bf-highlight);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.bf-table-wow td {
+  border-bottom: 1px solid #333;
+}
+
+.bf-table-wow tr:last-child td {
+  border-bottom: none;
+}
+
+.bf-table-wow tr:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bf-table-responsive-stack {
+    display: block;
+  }
+  
+  .bf-table-responsive-stack thead {
+    display: none;
+  }
+  
+  .bf-table-responsive-stack tbody,
+  .bf-table-responsive-stack tr,
+  .bf-table-responsive-stack td {
+    display: block;
+    width: 100%;
+  }
+  
+  .bf-table-responsive-stack tr {
+    margin-bottom: 1rem;
+    border: 1px solid #4a4a4a;
+  }
+  
+  .bf-table-responsive-stack td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    border-bottom: 1px solid #4a4a4a;
+  }
+  
+  .bf-table-responsive-stack td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 0.75rem;
+    width: 45%;
+    text-align: left;
+    font-weight: 700;
+  }
+  
+  .bf-table-responsive-stack tr:last-child td:last-child {
+    border-bottom: none;
+  }
+} 

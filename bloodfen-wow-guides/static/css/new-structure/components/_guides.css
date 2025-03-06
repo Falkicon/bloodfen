@@ -1,0 +1,335 @@
+/* 
+ * Bloodfen Guides - Guide Styles
+ * Contains all guide-related styles
+ */
+
+/* Guides section */
+.bf-guides-section {
+  padding: 64px 0;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .bf-guides-section {
+    padding: 96px 0;
+  }
+}
+
+/* Guides list */
+.bf-guides-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .bf-guides-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bf-guides-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Guide card */
+.bf-guide-card {
+  position: relative;
+  background-color: var(--bf-card-bg);
+  border-radius: var(--bf-border-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all var(--bf-transition-speed) var(--bf-transition-ease);
+  animation: fadeIn 1s ease-out;
+  animation-fill-mode: both;
+}
+
+.bf-guide-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(52, 152, 219, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Guide card animation delay */
+.bf-guides-list .bf-guide-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.bf-guides-list .bf-guide-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bf-guides-list .bf-guide-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Guide content */
+.bf-guide-content {
+  line-height: 1.7;
+  color: var(--bf-text-primary);
+}
+
+.bf-guide-content > *:first-child {
+  margin-top: 0;
+}
+
+.bf-guide-content > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .bf-guide-content {
+    padding: 0;
+  }
+}
+
+/* Guide container */
+.bf-guide-container {
+  padding-top: 32px;
+}
+
+/* Guide layout */
+.bf-guide-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .bf-guide-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .bf-guide-main {
+    flex: 1;
+    max-width: 800px;
+  }
+
+  .bf-guide-sidebar {
+    position: sticky;
+    top: 6rem;
+    width: 300px;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+  }
+}
+
+/* Guide header */
+.bf-guide-header {
+  margin-bottom: 2rem;
+}
+
+.bf-guide-header h1 {
+  margin-bottom: 0.5rem;
+  color: var(--bf-text-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.bf-season-badge {
+  display: inline-block;
+  background-color: var(--bf-highlight);
+  color: var(--bf-bg-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Guide meta */
+.bf-guide-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--bf-text-secondary);
+  font-size: 0.9rem;
+}
+
+.bf-guide-meta-item {
+  display: flex;
+  align-items: center;
+}
+
+.bf-guide-meta-item i {
+  margin-right: 0.5rem;
+  color: var(--bf-highlight);
+}
+
+/* Guide featured image */
+.bf-guide-featured-image {
+  margin-bottom: 2.5rem;
+  border-radius: var(--bf-border-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.bf-guide-featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Guide content sections */
+.bf-guide-section {
+  margin-bottom: 3rem;
+}
+
+.bf-guide-section-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.bf-guide-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  background-color: var(--bf-highlight);
+}
+
+/* Guide TOC */
+.bf-guide-toc {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--bf-border-radius);
+  padding: 1.25rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+}
+
+.bf-guide-toc-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.bf-guide-toc nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bf-guide-toc nav ul ul {
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+.bf-guide-toc nav li {
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.bf-guide-toc nav a {
+  display: inline-block;
+  color: var(--bf-text-secondary);
+  text-decoration: none;
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+  padding: 0.15rem 0;
+}
+
+.bf-guide-toc nav a:hover {
+  color: var(--bf-highlight);
+}
+
+/* Mobile adjustments */
+@media (max-width: 1023px) {
+  .bf-guide-toc {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Guide navigation */
+.bf-guide-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bf-guide-nav-prev,
+.bf-guide-nav-next {
+  display: flex;
+  align-items: center;
+  color: var(--bf-text-secondary);
+  text-decoration: none;
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-guide-nav-prev:hover,
+.bf-guide-nav-next:hover {
+  color: var(--bf-highlight);
+}
+
+.bf-guide-nav-prev i {
+  margin-right: 0.5rem;
+}
+
+.bf-guide-nav-next i {
+  margin-left: 0.5rem;
+}
+
+/* Guide sidebar */
+.bf-guide-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.bf-guide-sidebar-section {
+  margin-bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--bf-border-radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bf-guide-sidebar-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Related guides */
+.bf-related-guides {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bf-related-guides-title {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Guide CTA */
+.bf-guide-cta {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bf-guide-header h1 {
+    font-size: 2rem;
+  }
+  
+  .bf-guide-section-title {
+    font-size: 1.5rem;
+  }
+} 

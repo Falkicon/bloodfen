@@ -1,0 +1,6 @@
+{{ $name := .Get "name" }}
+{{ $id := .Get "id" }}
+
+<a href="https://www.wowhead.com/npc={{ $id }}" class="bf-wowhead-link bf-npc" data-wh-rename-link="false" data-wowhead="npc={{ $id }}">
+  {{ $name }}
+</a> 

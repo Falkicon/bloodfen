@@ -1,0 +1,17 @@
+{{ $name := .Get "name" }}
+{{ $icon := .Get "icon" | default "ability-default" }}
+{{ $cooldown := .Get "cooldown" | default "" }}
+{{ $type := .Get "type" | default "ability" }}
+
+<div class="bf-ability {{ $type }}">
+  <div class="bf-ability-header">
+    <div class="bf-ability-icon {{ $icon }}"></div>
+    <div class="bf-ability-info">
+      <h4 class="bf-ability-name">{{ $name }}</h4>
+      {{ if $cooldown }}<span class="bf-ability-cooldown">{{ $cooldown }}</span>{{ end }}
+    </div>
+  </div>
+  <div class="bf-ability-description">
+    {{ .Inner | markdownify }}
+  </div>
+</div> 

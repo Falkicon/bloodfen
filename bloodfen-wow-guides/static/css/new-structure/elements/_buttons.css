@@ -1,0 +1,216 @@
+/* 
+ * Bloodfen Guides - Button Styles
+ * Contains all button-related styles
+ */
+
+/* Base Button */
+.bf-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--bf-font-base);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: var(--bf-border-radius);
+  transition: all var(--bf-transition-speed) var(--bf-transition-ease);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bf-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.bf-button:hover:before {
+  left: 100%;
+}
+
+/* Primary Button */
+.primary-button,
+.bf-button-primary {
+  background-color: var(--bf-highlight);
+  color: var(--bf-text-primary);
+  border-color: var(--bf-highlight);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--bf-border-radius);
+  display: inline-block;
+  text-decoration: none;
+  transition: all var(--bf-transition-speed) var(--bf-transition-ease);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button:hover,
+.bf-button-primary:hover {
+  background-color: var(--bf-highlight-dark);
+  border-color: var(--bf-highlight-dark);
+  color: var(--bf-text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary Button */
+.secondary-button {
+  background-color: transparent;
+  color: var(--bf-text-primary);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.secondary-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--bf-text-primary);
+}
+
+/* Text Link Button */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  color: var(--bf-link);
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.text-link .arrow {
+  margin-left: 0.5rem;
+  transition: transform var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.text-link:hover {
+  color: var(--bf-link-hover);
+}
+
+.text-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Card Read More Button */
+.card-read-more {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  color: var(--bf-highlight);
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.card-read-more:hover {
+  color: var(--bf-highlight-dark);
+}
+
+.card-read-more .arrow {
+  margin-left: 0.25rem;
+  transition: transform var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.card-read-more:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Back to Top Button */
+.bf-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--bf-card-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(52, 152, 219, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.bf-back-to-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(52, 152, 219, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bf-back-to-top:hover::before {
+  opacity: 1;
+}
+
+.bf-back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.bf-back-to-top:hover {
+  transform: translateY(-5px);
+  border-color: rgba(52, 152, 219, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(52, 152, 219, 0.2);
+}
+
+.bf-back-to-top-icon {
+  color: var(--bf-highlight);
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.bf-back-to-top:hover .bf-back-to-top-icon {
+  transform: translateY(-3px);
+}
+
+/* Button Sizes */
+.bf-button-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.bf-button-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Button Group */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bf-back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+} 

@@ -1,0 +1,25 @@
+<div class="bf-class bf-class-{{ .Get 0 | lower }}">
+  <div class="bf-class-header">
+    <span class="bf-class-icon">
+      {{ if eq (.Get 0 | lower) "warrior" }}🗡️
+      {{ else if eq (.Get 0 | lower) "paladin" }}🛡️
+      {{ else if eq (.Get 0 | lower) "hunter" }}🏹
+      {{ else if eq (.Get 0 | lower) "rogue" }}🗡️
+      {{ else if eq (.Get 0 | lower) "priest" }}✨
+      {{ else if eq (.Get 0 | lower) "shaman" }}⚡
+      {{ else if eq (.Get 0 | lower) "mage" }}🔮
+      {{ else if eq (.Get 0 | lower) "warlock" }}🔥
+      {{ else if eq (.Get 0 | lower) "monk" }}🐉
+      {{ else if eq (.Get 0 | lower) "druid" }}🐻
+      {{ else if eq (.Get 0 | lower) "demon-hunter" }}👁️
+      {{ else if eq (.Get 0 | lower) "death-knight" }}❄️
+      {{ else if eq (.Get 0 | lower) "evoker" }}🐲
+      {{ else }}📋
+      {{ end }}
+    </span>
+    <span class="bf-class-title">{{ .Get 0 | title }}</span>
+  </div>
+  <div class="bf-class-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div> 

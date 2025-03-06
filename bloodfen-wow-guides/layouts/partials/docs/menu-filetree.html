@@ -1,0 +1,43 @@
+{{ $bookSection := default "docs" .Site.Params.BookSection }}
+{{ if eq $bookSection "*" }}
+  {{ $bookSection = "/" }}
+{{ end }}
+
+{{ with .Site.GetPage $bookSection }}
+  {{ template "book-section-tree" (dict "Section" . "CurrentPage" $) }}
+{{ end }}
+
+{{ define "book-section-tree" }}
+  {{ $current := .CurrentPage }}
+  {{ $section := .Section }}
+
+  {{ if .Section.Content }}
+    <a href="{{ .Section.RelPermalink }}" class="bf-section-link {{ if eq $current.RelPermalink .Section.RelPermalink }}bf-active{{ end }}">
+      {{- .Section.Title -}}
+    </a>
+  {{ else }}
+    <span class="bf-section-title">{{- .Section.Title -}}</span>
+  {{ end }}
+
+  {{ $pages := .Section.Pages }}
+  {{ $sections := where $pages "Kind" "section" }}
+  {{ $docs := where $pages "Kind" "page" }}
+
+  {{ if or $sections $docs }}
+  <ul class="bf-section-list">
+    {{ range $sections }}
+      <li class="bf-section-item">
+        {{ template "book-section-tree" (dict "Section" . "CurrentPage" $current) }}
+      </li>
+    {{ end }}
+
+    {{ range $docs.ByWeight }}
+      <li class="bf-page-item">
+        <a href="{{ .RelPermalink }}" class="bf-page-link {{ if eq $current.RelPermalink .RelPermalink }}bf-active{{ end }}">
+          {{- .Title -}}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+{{ end }} 

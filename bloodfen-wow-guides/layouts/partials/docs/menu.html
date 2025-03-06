@@ -1,0 +1,20 @@
+{{ $bookSection := default "docs" .Site.Params.BookSection }}
+{{ if eq $bookSection "*" }}
+  {{ $bookSection = "/" }}
+{{ end }}
+
+<nav class="bf-docs-nav">
+  {{ if .Site.Params.BookMenuBundle }}
+    {{ partial "docs/menu-bundle" . }}
+  {{ else }}
+    {{ partial "docs/menu-filetree" . }}
+  {{ end }}
+
+  {{ if and .IsPage .Site.Params.BookRepo .Site.Params.BookEditPath }}
+    <a class="bf-book-edit" href="{{ .Site.Params.BookRepo }}/{{ .Site.Params.BookEditPath }}/{{ path.Clean .File.Path }}" target="_blank" rel="noopener">
+      <span>{{ i18n "Edit this page" }}</span>
+    </a>
+  {{ end }}
+</nav>
+
+{{ template "menu-after" . }} 

@@ -1,0 +1,44 @@
+/* 
+ * Bloodfen Guides - Breakpoints
+ * Contains standardized media query breakpoints
+ */
+
+:root {
+  /* Breakpoint values */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* 
+ * Usage:
+ * 
+ * @media (min-width: var(--breakpoint-md)) {
+ *   // Styles for medium screens and up
+ * }
+ * 
+ * @media (max-width: calc(var(--breakpoint-md) - 1px)) {
+ *   // Styles for smaller than medium screens
+ * }
+ * 
+ * Common breakpoint patterns:
+ * 
+ * Mobile-first (recommended):
+ * Base styles for mobile, then add styles for larger screens
+ * 
+ * @media (min-width: var(--breakpoint-sm)) { ... } // 640px and up
+ * @media (min-width: var(--breakpoint-md)) { ... } // 768px and up
+ * @media (min-width: var(--breakpoint-lg)) { ... } // 1024px and up
+ * @media (min-width: var(--breakpoint-xl)) { ... } // 1280px and up
+ * 
+ * Desktop-first:
+ * Base styles for desktop, then override for smaller screens
+ * 
+ * @media (max-width: calc(var(--breakpoint-xl) - 1px)) { ... } // Smaller than 1280px
+ * @media (max-width: calc(var(--breakpoint-lg) - 1px)) { ... } // Smaller than 1024px
+ * @media (max-width: calc(var(--breakpoint-md) - 1px)) { ... } // Smaller than 768px
+ * @media (max-width: calc(var(--breakpoint-sm) - 1px)) { ... } // Smaller than 640px
+ */ 

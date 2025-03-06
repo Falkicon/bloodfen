@@ -1,0 +1,129 @@
+<!-- Custom CSS for Wowhead tooltips -->
+<style>
+/* Wowhead Link Styles */
+.wowhead-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 2px;
+  white-space: nowrap;
+}
+
+.wowhead-icon {
+  display: inline-block;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.wowhead-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* Item Quality Colors */
+.poor-quality .wowhead-name {
+  color: #9d9d9d !important;
+}
+
+.common-quality .wowhead-name {
+  color: #ffffff !important;
+}
+
+.uncommon-quality .wowhead-name {
+  color: #1eff00 !important;
+}
+
+.rare-quality .wowhead-name {
+  color: #0070dd !important;
+}
+
+.epic-quality .wowhead-name {
+  color: #a335ee !important;
+}
+
+.legendary-quality .wowhead-name {
+  color: #ff8000 !important;
+}
+
+.artifact-quality .wowhead-name {
+  color: #e6cc80 !important;
+}
+
+.heirloom-quality .wowhead-name {
+  color: #00ccff !important;
+}
+
+/* Dark mode adjustments */
+html[data-theme="dark"] .common-quality .wowhead-name {
+  color: #f0f0f0 !important;
+}
+
+.npc {
+  color: #ffd100 !important;
+  font-weight: bold;
+}
+
+/* Fix for Wowhead tooltips */
+.wowhead-tooltip {
+  position: absolute;
+  display: none;
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1000;
+  max-width: 300px;
+}
+
+/* Override Wowhead's default styles */
+a[data-wowhead] {
+  text-decoration: none !important;
+}
+
+/* Fix for Wowhead icons */
+.iconmedium, .iconsmall {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Fix for Wowhead tooltips in dark mode */
+html[data-theme="dark"] .wowhead-tooltip {
+  filter: brightness(0.8);
+}
+</style>
+
+<!-- Wowhead Tooltips -->
+<script>
+  var whTooltips = {
+    colorLinks: true,
+    iconizeLinks: true,
+    renameLinks: false,
+    iconSize: 'small',
+    hide: { 
+      sellprice: true,
+      ilvl: false,
+      dropchance: false 
+    }
+  };
+</script>
+<script src="https://wow.zamimg.com/widgets/power.js" defer></script><script> 
+  var whTooltips = { 
+    colorLinks: true, 
+    iconizeLinks: true, 
+    renameLinks: false, 
+    iconSize: 'small', 
+    hide: { 
+      sellprice: true, 
+      ilvl: false, 
+      dropchance: false 
+    } 
+  }; 
+</script> 
+<script src="https://wow.zamimg.com/widgets/power.js" defer></script> 

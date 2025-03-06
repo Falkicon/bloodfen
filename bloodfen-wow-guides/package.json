@@ -1,0 +1,62 @@
+{
+  "name": "bloodfen-wow-guides",
+  "version": "1.0.0",
+  "description": "World of Warcraft guides for The War Within Season 2",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server -D",
+    "build": "hugo --minify",
+    "clean": "rimraf public resources",
+    "tailwind:dev": "tailwindcss -i ./assets/css/main.css -o ./static/css/tailwind.css --watch",
+    "tailwind:build": "tailwindcss -i ./assets/css/main.css -o ./static/css/tailwind.css --minify",
+    "start": "concurrently npm:dev npm:tailwind:dev",
+    "build:all": "npm run tailwind:build && npm run build",
+    "lint:js": "eslint static/js/**/*.js",
+    "lint:css": "stylelint assets/css/**/*.css",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "hugo server --disableFastRender",
+    "serve:prod": "hugo server --disableFastRender --minify --environment production",
+    "build:clean": "npm run clean && npm run build:all",
+    "deploy": "npm run lint:fix && npm run build:clean",
+    "check": "hugo check",
+    "purge:css": "purgecss --css ./static/css/tailwind.css --content ./layouts/**/*.html ./content/**/*.md --output ./static/css/",
+    "analyze": "hugo --gc --templateMetrics --templateMetricsHints",
+    "update": "npm update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Falkicon/bloodfen.git"
+  },
+  "keywords": [
+    "wow",
+    "world-of-warcraft",
+    "guides",
+    "gaming",
+    "hugo",
+    "static-site"
+  ],
+  "author": "Falkicon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Falkicon/bloodfen/issues"
+  },
+  "homepage": "https://github.com/Falkicon/bloodfen#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "purgecss": "^7.0.2",
+    "rimraf": "^5.0.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "tailwindcss": "^3.3.5"
+  }
+}

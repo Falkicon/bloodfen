@@ -1,0 +1,11 @@
+{{ $name := .Get "name" }}
+{{ $id := .Get "id" }}
+{{ $quality := .Get "quality" | default "epic" }}
+{{ $icon := .Get "icon" | default "inv_misc_questionmark" }}
+
+<a href="https://www.wowhead.com/item={{ $id }}" class="bf-wowhead-link {{ $quality }}-quality" data-wh-icon-size="small" data-wh-rename-link="false" data-wh-icon-added="true" data-wowhead="item={{ $id }}">
+  <span class="bf-wowhead-icon">
+    <img src="https://wow.zamimg.com/images/wow/icons/small/{{ $icon }}.jpg" alt="{{ $name }}" onerror="this.src='https://wow.zamimg.com/images/wow/icons/small/inv_misc_questionmark.jpg'"/>
+  </span>
+  <span class="bf-wowhead-name">{{ $name }}</span>
+</a> 

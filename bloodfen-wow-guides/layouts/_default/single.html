@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="bf-container bf-guide-container">
+	<div class="bf-guide-layout">
+		<div class="bf-guide-main">
+			<article class="bf-guide">
+				<header class="bf-guide-header">
+					<h1>{{ .Title }}</h1>
+					{{ if .Params.season }}
+					<span class="bf-season-badge">Season {{ .Params.season }}</span>
+					{{ end }}
+				</header>
+
+				<div class="bf-guide-content">
+					{{ $content := .Content }}
+					{{ $content := replaceRE "(?s)^\\s*<h1[^>]*>.*?</h1>" "" $content }}
+					{{ $content | safeHTML }}
+				</div>
+			</article>
+		</div>
+
+		<aside class="bf-guide-sidebar">
+			<div class="bf-guide-toc">
+				{{ .TableOfContents }}
+			</div>
+		</aside>
+	</div>
+</div>
+{{ end }} 

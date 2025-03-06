@@ -1,0 +1,104 @@
+/* Syntax Highlighting */
+
+/* Light Theme */
+:root {
+  --syntax-background: #f5f5f5;
+  --syntax-text: #333333;
+  --syntax-comment: #6a737d;
+  --syntax-keyword: #d73a49;
+  --syntax-string: #032f62;
+  --syntax-number: #005cc5;
+  --syntax-function: #6f42c1;
+  --syntax-variable: #e36209;
+  --syntax-operator: #d73a49;
+  --syntax-class: #6f42c1;
+  --syntax-tag: #22863a;
+  --syntax-attribute: #005cc5;
+  --syntax-namespace: #6f42c1;
+  --syntax-selector: #22863a;
+  --syntax-property: #005cc5;
+  --syntax-punctuation: #24292e;
+  --syntax-definition: #6f42c1;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --syntax-background: #282c34;
+  --syntax-text: #abb2bf;
+  --syntax-comment: #5c6370;
+  --syntax-keyword: #c678dd;
+  --syntax-string: #98c379;
+  --syntax-number: #d19a66;
+  --syntax-function: #61afef;
+  --syntax-variable: #e06c75;
+  --syntax-operator: #56b6c2;
+  --syntax-class: #e5c07b;
+  --syntax-tag: #e5c07b;
+  --syntax-attribute: #d19a66;
+  --syntax-namespace: #c678dd;
+  --syntax-selector: #e06c75;
+  --syntax-property: #61afef;
+  --syntax-punctuation: #abb2bf;
+  --syntax-definition: #c678dd;
+}
+
+/* Code blocks */
+.highlight {
+  background-color: var(--syntax-background);
+  border-radius: 4px;
+  margin: 1em 0;
+  overflow: auto;
+}
+
+.highlight pre {
+  background-color: var(--syntax-background);
+  color: var(--syntax-text);
+  padding: 1em;
+  margin: 0;
+  overflow-x: auto;
+}
+
+/* Syntax tokens */
+.highlight .c, .highlight .ch, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp, .highlight .cpf {
+  color: var(--syntax-comment);
+  font-style: italic;
+}
+
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt {
+  color: var(--syntax-keyword);
+  font-weight: bold;
+}
+
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+  color: var(--syntax-string);
+}
+
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo {
+  color: var(--syntax-number);
+}
+
+.highlight .na, .highlight .nc, .highlight .nd, .highlight .ne, .highlight .nf, .highlight .fm {
+  color: var(--syntax-function);
+}
+
+.highlight .nx, .highlight .nt, .highlight .nl {
+  color: var(--syntax-variable);
+}
+
+.highlight .o, .highlight .ow {
+  color: var(--syntax-operator);
+}
+
+.highlight .p, .highlight .pi {
+  color: var(--syntax-punctuation);
+}
+
+/* Inline code */
+code {
+  background-color: var(--syntax-background);
+  color: var(--syntax-text);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 85%;
+} 

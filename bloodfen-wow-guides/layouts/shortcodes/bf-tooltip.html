@@ -1,0 +1,8 @@
+{{ $text := .Get "text" }}
+{{ $tooltip := .Get "tooltip" }}
+{{ $quality := .Get "quality" | default "" }}
+
+<span class="bf-tooltip-wrapper">
+  <span class="bf-tooltip-text {{ $quality }}">{{ $text }}</span>
+  <span class="bf-tooltip-content">{{ $tooltip | markdownify }}</span>
+</span> 

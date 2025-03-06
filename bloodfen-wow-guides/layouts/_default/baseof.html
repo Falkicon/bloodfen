@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+		<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+		
+		<!-- Open Graph tags -->
+		{{ template "_internal/opengraph.html" . }}
+		
+		<!-- Twitter Card tags -->
+		{{ template "_internal/twitter_cards.html" . }}
+		
+		<!-- Canonical link, RSS -->
+		{{- with .Params.canonical }}
+		<link rel="canonical" href="{{ . }}">
+		{{- else }}
+		<link rel="canonical" href="{{ .Permalink }}">
+		{{- end }}
+		{{- with .OutputFormats.Get "RSS" }}
+		<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
+		<link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}">
+		{{- end }}
+		
+		<!-- Styles -->
+		<!-- Bloodfen CSS Framework -->
+		<link rel="stylesheet" href="/css/tailwind.css">
+		<link rel="stylesheet" href="/css/new-structure/main.css">
+		
+		<!-- Font Awesome for icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+		<link rel="shortcut icon" href="/icons/favicon.ico">
+		
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+		
+		<!-- Google analytics script -->
+		{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+		{{ template "_internal/google_analytics.html" . }}
+		{{- end -}}
+		
+		<!-- Custom head extensions -->
+		{{- if templates.Exists "partials/head-extension.html" -}}
+		{{ partial "head-extension.html" . }}
+		{{- end -}}
+		
+		<!-- Scripts -->
+		<script>
+			// Remove no-js class
+			document.documentElement.classList.remove('no-js');
+		</script>
+	</head>
+	<body class="bg-bf-bg text-bf-text font-sans">
+		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-bf-bg-card focus:z-50">Skip to main content</a>
+		
+		<!-- Header with banner background -->
+		<header class="bf-header fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md" role="banner">
+			<div class="bf-container bf-header-container flex items-center justify-between py-4">
+				<div class="bf-logo">
+					<a href="/" class="bf-logo-link" aria-label="Bloodfen Guides Home">
+						<span class="bf-logo-text ml-2">BLOODFEN
+						Guides</span>
+					</a>
+				</div>
+				<nav class="bf-nav" aria-label="Main navigation">
+					<ul class="bf-nav-list" role="menubar">
+						{{ range .Site.Menus.main }}
+						<li class="bf-nav-item" role="none">
+							<a href="{{ .URL }}" class="bf-nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}" role="menuitem" {{ if $.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a>
+						</li>
+						{{ end }}
+					</ul>
+				</nav>
+				<button class="bf-mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+					<span class="sr-only">Menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			
+			<!-- Mobile Menu -->
+			<div id="mobile-menu" class="bf-mobile-menu hidden" aria-hidden="true">
+				<div class="container mx-auto px-4 py-6">
+					<ul class="bf-mobile-nav-list" role="menu">
+						{{ range .Site.Menus.main }}
+						<li role="none">
+							<a href="{{ .URL }}" class="bf-mobile-nav-link" role="menuitem" {{ if $.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+		</header>
+		
+		<!-- Main content -->
+		<main id="main-content" class="bf-main" role="main">
+			{{- block "main" . }}{{- end }}
+		</main>
+		
+		<!-- Footer -->
+		<footer class="bf-footer" role="contentinfo">
+			<div class="bf-container">
+				<div class="bf-footer-columns">
+					<div class="bf-footer-column">
+						<div class="bf-footer-logo">
+							<span class="bf-footer-logo-text">Bloodfen Guides</span>
+						</div>
+						<p class="bf-footer-copyright">© {{ now.Format "2006" }} Bloodfen Guides. All rights reserved.</p>
+					</div>
+					<div class="bf-footer-column">
+						<h4 id="footer-guides">Guides</h4>
+						<ul aria-labelledby="footer-guides">
+							<li><a href="/world-of-warcraft/the-war-within/first-week-activities/">First Week Activities</a></li>
+							<li><a href="/world-of-warcraft/the-war-within/delves-world-content/">Delves & World Content</a></li>
+							<li><a href="/world-of-warcraft/the-war-within/mythic-plus-dungeons/">Mythic+ Dungeons</a></li>
+							<li><a href="/world-of-warcraft/the-war-within/raid-guide/">Liberation of Undermine</a></li>
+							<li><a href="/world-of-warcraft/the-war-within/pvp-guide/">PvP Guide</a></li>
+							<li><a href="/world-of-warcraft/the-war-within/gear-meta-guide/">Gear & Meta Guide</a></li>
+							<li><a href="/world-of-warcraft/the-war-within/crafting-professions/">Crafting & Professions</a></li>
+						</ul>
+					</div>
+					<div class="bf-footer-column">
+						<h4 id="footer-connect">Connect</h4>
+						<ul aria-labelledby="footer-connect">
+							<li><a href="https://discord.gg/bloodfen" target="_blank" rel="noopener" aria-label="Discord (opens in a new tab)">Discord</a></li>
+							<li><a href="https://twitter.com/bloodfen" target="_blank" rel="noopener" aria-label="Twitter (opens in a new tab)">Twitter</a></li>
+							<li><a href="https://patreon.com/bloodfen" target="_blank" rel="noopener" aria-label="Patreon (opens in a new tab)">Patreon</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="bf-footer-bottom">
+					<div class="bf-footer-copyright">
+						World of Warcraft® and Blizzard Entertainment® are all trademarks or registered trademarks of Blizzard Entertainment in the United States and/or other countries. These terms and all related materials, logos, and images are copyright © Blizzard Entertainment. This site is in no way associated with or endorsed by Blizzard Entertainment®.
+					</div>
+					<div class="bf-footer-links">
+						<a href="/privacy" class="bf-footer-link">Privacy Policy</a>
+						<a href="/terms" class="bf-footer-link">Terms of Use</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Back to top button -->
+		<a href="#" class="bf-back-to-top" aria-label="Back to top" aria-hidden="true" tabindex="-1">
+			<span class="bf-back-to-top-icon" aria-hidden="true">↑</span>
+		</a>
+		
+		<!-- JavaScript -->
+		<script src="/js/main.js" defer></script>
+		<script src="/js/bf-theme.js" defer></script>
+	</body>
+</html> 

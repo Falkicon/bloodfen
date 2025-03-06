@@ -1,0 +1,15 @@
+{{ $type := .Get "type" | default "info" }}
+{{ $icon := .Get "icon" }}
+{{ $title := .Get "title" }}
+
+<div class="bf-callout bf-callout-{{ $type }}">
+  {{ if or $title $icon }}
+  <div class="bf-callout-header">
+    {{ if $icon }}<span class="bf-callout-icon {{ $icon }}"></span>{{ end }}
+    {{ if $title }}<h4 class="bf-callout-title">{{ $title }}</h4>{{ end }}
+  </div>
+  {{ end }}
+  <div class="bf-callout-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div> 

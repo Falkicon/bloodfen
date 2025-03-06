@@ -1,0 +1,418 @@
+/* Wowhead Link Styles */
+
+.wowhead-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 2px;
+  white-space: nowrap;
+}
+
+.wowhead-icon {
+  display: inline-block;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.wowhead-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* Item Quality Colors */
+
+.poor-quality .wowhead-name {
+  color: #9d9d9d !important;
+}
+
+.common-quality .wowhead-name {
+  color: #fff !important;
+}
+
+.uncommon-quality .wowhead-name {
+  color: #1eff00 !important;
+}
+
+.rare-quality .wowhead-name {
+  color: #0070dd !important;
+}
+
+.epic-quality .wowhead-name {
+  color: #a335ee !important;
+}
+
+.legendary-quality .wowhead-name {
+  color: #ff8000 !important;
+}
+
+.artifact-quality .wowhead-name {
+  color: #e6cc80 !important;
+}
+
+.heirloom-quality .wowhead-name {
+  color: #0cf !important;
+}
+
+/* Dark mode adjustments */
+
+html[data-theme="dark"] .common-quality .wowhead-name {
+  color: #f0f0f0 !important;
+}
+
+.npc {
+  color: #ffd100 !important;
+  font-weight: 700;
+}
+
+/* Fix for Wowhead tooltips */
+
+.wowhead-tooltip {
+  position: absolute;
+  display: none;
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1000;
+  max-width: 300px;
+}
+
+/* Override Wowhead's default styles */
+
+a[data-wowhead] {
+  text-decoration: none !important;
+}
+
+/* Fix for Wowhead icons */
+
+.iconmedium, .iconsmall {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Fix for Wowhead tooltips in dark mode */
+
+html[data-theme="dark"] .wowhead-tooltip {
+  filter: brightness(0.8);
+}
+
+/* Enhanced Typography for Bloodfen WoW Guides */
+
+/* Base Typography Improvements */
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ecf0f1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  line-height: 1.2;
+  color: #f39c12;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(243, 156, 18, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(243, 156, 18, 0.2);
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Paragraphs and Text */
+p {
+  margin-bottom: 1.5em;
+  line-height: 1.7;
+}
+
+strong, b {
+  font-weight: 600;
+  color: #f7bf30;
+}
+
+em, i {
+  font-style: italic;
+  color: #bdc3c7;
+}
+
+/* Lists */
+ul, ol {
+  margin: 1.5em 0;
+  padding-left: 2em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+
+li > ul, li > ol {
+  margin: 0.5em 0;
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+a:hover, a:focus {
+  color: #66b3f1;
+  border-bottom-color: rgba(102, 179, 241, 0.7);
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+  font-style: italic;
+  color: #bdc3c7;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code */
+code, pre {
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  background-color: rgba(30, 35, 40, 0.8);
+  border-radius: 3px;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  color: #e74c3c;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  line-height: 1.5;
+}
+
+pre code {
+  padding: 0;
+  color: inherit;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin: 1.5em 0;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+th {
+  background-color: rgba(52, 152, 219, 0.2);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75em;
+  border-bottom: 2px solid rgba(52, 152, 219, 0.5);
+}
+
+td {
+  padding: 0.75em;
+  border-bottom: 1px solid rgba(189, 195, 199, 0.2);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(30, 35, 40, 0.4);
+}
+
+/* Horizontal Rule */
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(189, 195, 199, 0.5), transparent);
+  margin: 2em 0;
+}
+
+/* Content Container */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Guide-specific Enhancements */
+.book-toc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.book-toc a {
+  border-bottom: none;
+  display: block;
+  padding: 0.3em 0;
+}
+
+.book-toc ul {
+  list-style-type: none;
+  padding-left: 1em;
+}
+
+/* Class Colors */
+.class-warrior { color: #C79C6E; }
+.class-paladin { color: #F58CBA; }
+.class-hunter { color: #ABD473; }
+.class-rogue { color: #FFF569; }
+.class-priest { color: #FFFFFF; }
+.class-shaman { color: #0070DE; }
+.class-mage { color: #69CCF0; }
+.class-warlock { color: #9482C9; }
+.class-monk { color: #00FF96; }
+.class-druid { color: #FF7D0A; }
+.class-demon-hunter { color: #A330C9; }
+.class-death-knight { color: #C41F3B; }
+.class-evoker { color: #33937F; }
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
+  
+  h5, h6 {
+    font-size: 1rem;
+  }
+  
+  .content {
+    padding: 0 1rem;
+  }
+}
+
+/* Card Improvements */
+.wow-card {
+  position: relative;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  border-radius: 0.375rem;
+  background-color: rgba(30, 35, 40, 0.8);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.wow-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.card-title {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f39c12;
+  margin-bottom: 0.75rem;
+}
+
+.card-summary {
+  flex-grow: 1;
+  color: #ecf0f1;
+  margin-bottom: 1rem;
+}
+
+.card-read-more {
+  display: inline-block;
+  color: #3498db;
+  font-weight: 500;
+  margin-top: auto;
+  border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.card-read-more:hover {
+  color: #66b3f1;
+  border-bottom-color: rgba(102, 179, 241, 0.7);
+}
+
+.card-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: rgba(243, 156, 18, 0.9);
+  color: #121420;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+} 

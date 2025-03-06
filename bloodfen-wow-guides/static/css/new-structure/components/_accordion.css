@@ -1,0 +1,153 @@
+/* 
+ * Bloodfen Guides - Accordion Styles
+ * Contains all accordion-related styles
+ */
+
+/* Base accordion */
+.bf-accordion {
+  margin-bottom: 1rem;
+  border-radius: var(--bf-border-radius);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Accordion header */
+.bf-accordion-header {
+  padding: 0;
+  margin: 0;
+}
+
+/* Accordion toggle button */
+.bf-accordion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bf-text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bf-accordion-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Accordion icon */
+.bf-accordion-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.bf-accordion-icon::before,
+.bf-accordion-icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--bf-highlight);
+  transition: all 0.3s ease;
+}
+
+.bf-accordion-icon::before {
+  top: 9px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.bf-accordion-icon::after {
+  top: 0;
+  left: 9px;
+  width: 2px;
+  height: 100%;
+}
+
+.bf-accordion.active .bf-accordion-icon {
+  transform: rotate(180deg);
+}
+
+.bf-accordion.active .bf-accordion-icon::after {
+  opacity: 0;
+}
+
+/* Accordion content */
+.bf-accordion-content {
+  display: none;
+  padding: 0 1.5rem 1.5rem;
+  color: var(--bf-text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.bf-accordion.active .bf-accordion-content {
+  display: block;
+  animation: accordionFadeIn 0.5s ease;
+}
+
+/* Accordion group */
+.bf-accordion-group .bf-accordion {
+  margin-bottom: 0.5rem;
+}
+
+/* Accordion with border */
+.bf-accordion-bordered {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bf-accordion-group.bf-accordion-bordered .bf-accordion {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+}
+
+.bf-accordion-group.bf-accordion-bordered .bf-accordion:first-child {
+  border-top-left-radius: var(--bf-border-radius);
+  border-top-right-radius: var(--bf-border-radius);
+}
+
+.bf-accordion-group.bf-accordion-bordered .bf-accordion:last-child {
+  border-bottom-left-radius: var(--bf-border-radius);
+  border-bottom-right-radius: var(--bf-border-radius);
+  border-bottom: none;
+}
+
+/* Accordion with highlight */
+.bf-accordion-highlight .bf-accordion-toggle {
+  border-left: 3px solid transparent;
+}
+
+.bf-accordion-highlight .bf-accordion.active .bf-accordion-toggle {
+  border-left-color: var(--bf-highlight);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Accordion animations */
+@keyframes accordionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bf-accordion-toggle {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .bf-accordion-content {
+    padding: 0 1rem 1rem;
+    font-size: 0.95rem;
+  }
+} 

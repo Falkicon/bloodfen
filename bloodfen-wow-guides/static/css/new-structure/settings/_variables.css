@@ -1,0 +1,106 @@
+/* 
+ * Bloodfen Guides - CSS Variables
+ * Contains all global variables used throughout the site
+ */
+
+:root {
+  /* Colors */
+  --bf-bg-dark: #121420;
+  --bf-bg-darker: #0c0e17;
+  --bf-bg: #1a1c2a;
+  --bf-bg-light: #2a2e44;
+  
+  --bf-text-primary: #ecf0f1;
+  --bf-text-secondary: #bdc3c7;
+  --bf-text-muted: #95a5a6;
+  
+  --bf-highlight: #3498db;
+  --bf-highlight-dark: #2980b9;
+  
+  --bf-link: #3498db;
+  --bf-link-hover: #66b3f1;
+  
+  --bf-header-bg: rgba(0, 0, 0, 0.5);
+  --bf-footer-bg: rgba(20, 25, 30, 0.95);
+  --bf-card-bg: rgba(30, 35, 40, 0.8);
+  
+  /* Alliance & Horde Colors */
+  --alliance-blue: #0078ff;
+  --alliance-gold: #f8b700;
+  --horde-red: #b30000;
+  --horde-orange: #ff4500;
+  
+  /* Class Colors */
+  --class-warrior: #C79C6E;
+  --class-paladin: #F58CBA;
+  --class-hunter: #ABD473;
+  --class-rogue: #FFF569;
+  --class-priest: #FFFFFF;
+  --class-shaman: #0070DE;
+  --class-mage: #69CCF0;
+  --class-warlock: #9482C9;
+  --class-monk: #00FF96;
+  --class-druid: #FF7D0A;
+  --class-demon-hunter: #A330C9;
+  --class-death-knight: #C41F3B;
+  --class-evoker: #33937F;
+  
+  /* Item Quality Colors */
+  --quality-poor: #9d9d9d;
+  --quality-common: #ffffff;
+  --quality-uncommon: #1eff00;
+  --quality-rare: #0070dd;
+  --quality-epic: #a335ee;
+  --quality-legendary: #ff8000;
+  --quality-artifact: #e6cc80;
+  --quality-heirloom: #00ccff;
+  
+  /* Functional Colors */
+  --color-success: #2ecc71;
+  --color-info: #3498db;
+  --color-warning: #f39c12;
+  --color-danger: #e74c3c;
+  
+  /* Typography */
+  --bf-font-base: 'Roboto', sans-serif;
+  --bf-font-heading: 'Cinzel', serif;
+  --bf-font-mono: 'Courier New', monospace;
+  
+  /* Spacing */
+  --bf-spacing-xs: 4px;
+  --bf-spacing-sm: 8px;
+  --bf-spacing-md: 16px;
+  --bf-spacing-lg: 24px;
+  --bf-spacing-xl: 32px;
+  --bf-spacing-xxl: 48px;
+  
+  /* Layout */
+  --bf-container-width: 1280px;
+  --bf-container-padding: 16px;
+  --bf-border-radius: 8px;
+  
+  /* Transitions */
+  --bf-transition-speed: 0.3s;
+  --bf-transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Shadows */
+  --bf-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --bf-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --bf-shadow-md: 0 6px 10px rgba(0, 0, 0, 0.2);
+  --bf-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  --bf-shadow-xl: 0 15px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(52, 152, 219, 0.2);
+  
+  /* Z-index layers */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+}
+
+/* Dark theme overrides if needed */
+[data-theme="dark"] {
+  /* Any dark theme specific variables would go here */
+} 

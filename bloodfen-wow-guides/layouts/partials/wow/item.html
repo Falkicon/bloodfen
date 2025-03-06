@@ -1,0 +1,12 @@
+{{/* 
+  This partial renders a WoW item with a tooltip.
+  It expects itemID and optionally itemName to be set in the page scratch.
+*/}}
+{{ $itemID := $.Page.Scratch.Get "itemID" }}
+{{ $itemName := $.Page.Scratch.Get "itemName" | default (printf "Item #%s" $itemID) }}
+
+<a href="https://www.wowhead.com/item={{ $itemID }}" 
+   class="bf-wowhead-link bf-item-link" 
+   data-wowhead="item={{ $itemID }}">
+   {{ $itemName }}
+</a> 

@@ -1,0 +1,316 @@
+/* 
+ * Bloodfen Guides - Typography Styles
+ * Contains all typography-related styles
+ */
+
+/* Base Typography */
+body {
+  font-family: var(--bf-font-base);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--bf-text-primary);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--bf-font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: var(--bf-text-primary);
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+  
+  h2 {
+    font-size: 36px;
+  }
+  
+  h3 {
+    font-size: 30px;
+  }
+  
+  h4 {
+    font-size: 24px;
+  }
+  
+  h5 {
+    font-size: 20px;
+  }
+  
+  h6 {
+    font-size: 18px;
+  }
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 20px;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 20px;
+  padding-left: 24px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Nested lists */
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* Definition lists */
+dl {
+  margin-bottom: 20px;
+}
+
+dt {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+dd {
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 24px 0;
+  padding: 16px 24px;
+  border-left: 4px solid var(--bf-highlight);
+  background-color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-style: normal;
+  color: var(--bf-text-secondary);
+}
+
+/* Code */
+code, pre {
+  font-family: var(--bf-font-mono);
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+code {
+  padding: 3px 6px;
+}
+
+pre {
+  padding: 16px;
+  margin: 24px 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Horizontal rule */
+hr {
+  margin: 32px 0;
+  border: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Small text */
+small {
+  font-size: 14px;
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* Font weights */
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--bf-text-primary);
+}
+
+.text-secondary {
+  color: var(--bf-text-secondary);
+}
+
+.text-muted {
+  color: var(--bf-text-muted);
+}
+
+.text-highlight {
+  color: var(--bf-highlight);
+}
+
+/* Special title styles */
+.bf-title {
+  font-family: var(--bf-font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .bf-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bf-title {
+    font-size: 4rem;
+  }
+}
+
+.bf-subtitle {
+  font-family: var(--bf-font-heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--bf-highlight);
+}
+
+@media (min-width: 768px) {
+  .bf-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.bf-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: var(--bf-text-secondary);
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .bf-description {
+    font-size: 1.25rem;
+  }
+}
+
+/* WoW-specific class colors */
+.class-warrior { color: var(--class-warrior); }
+.class-paladin { color: var(--class-paladin); }
+.class-hunter { color: var(--class-hunter); }
+.class-rogue { color: var(--class-rogue); }
+.class-priest { color: var(--class-priest); }
+.class-shaman { color: var(--class-shaman); }
+.class-mage { color: var(--class-mage); }
+.class-warlock { color: var(--class-warlock); }
+.class-monk { color: var(--class-monk); }
+.class-druid { color: var(--class-druid); }
+.class-demon-hunter { color: var(--class-demon-hunter); }
+.class-death-knight { color: var(--class-death-knight); }
+.class-evoker { color: var(--class-evoker); } 

@@ -1,0 +1,73 @@
+baseURL: "https://bloodfen.com/"
+languageCode: "en-us"
+title: "Bloodfen Guides"
+
+# Disable Google Analytics
+googleAnalytics: ""
+
+# Syntax highlighting
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    noClasses: false
+    style: monokai
+
+# Site parameters
+params:
+  # Theme parameters
+  color: dark
+  defaultSocialImage: "img/default-social-image.png"
+  favicon: "/favicon.ico"
+  showToc: true
+  showSearch: true
+  description: "Comprehensive guides for The War Within expansion in World of Warcraft"
+  
+  # Author information
+  author:
+    name: "Bloodfen Team"
+    email: "contact@bloodfen.com"
+    about: "A team of experienced World of Warcraft players dedicated to creating high-quality guides."
+    avatar: "img/avatar.jpg"
+  
+  # Social links
+  socialIcons:
+    - name: "discord"
+      url: "https://discord.gg/bloodfen"
+    - name: "twitter"
+      url: "https://twitter.com/bloodfenguides"
+    - name: "patreon"
+      url: "https://patreon.com/bloodfen"
+  
+  # Homepage settings
+  homepage:
+    # Show list of posts
+    showList: false
+    # Hero section
+    hero:
+      enabled: true
+      title: "Bloodfen Guides"
+      subtitle: "Comprehensive guides for The War Within expansion"
+      content: "Welcome to Bloodfen Guides, your comprehensive resource for World of Warcraft: The War Within. Our guides are designed to help players of all skill levels navigate the complexities of the game."
+      image: "/images/hero-bg.jpg"
+      buttonText: "Explore Guides"
+      buttonLink: "/world-of-warcraft/"
+
+# Menu settings
+menu:
+  main:
+    - identifier: "home"
+      name: "HOME"
+      url: "/"
+      weight: 1
+  
+  footer:
+    - identifier: "privacy"
+      name: "Privacy Policy"
+      url: "/privacy/"
+      weight: 1
+    - identifier: "terms"
+      name: "Terms of Service"
+      url: "/terms/"
+      weight: 2 

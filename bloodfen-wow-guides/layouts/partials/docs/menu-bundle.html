@@ -1,0 +1,33 @@
+{{ $current := . }}
+{{ $bundle := .Site.GetPage .Site.Params.BookMenuBundle }}
+{{ with $bundle }}
+  {{ range sort .Resources "Params.weight" }}
+    {{ template "book-menu-item" (dict "Item" . "Current" $current) }}
+  {{ end }}
+{{ end }}
+
+{{ define "book-menu-item" }}
+  {{ $current := .Current }}
+  {{ $item := .Item }}
+
+  {{ $active := and $current.Page $item.Page (eq $current.Page.File.Path $item.Page.File.Path) }}
+  {{ $expanded := or $active (in $current.Page.File.Path $item.Page.File.Path) }}
+
+  {{ if $item.Page }}
+    <a href="{{ $item.Page.RelPermalink }}" class="bf-menu-item {{ if $active }}bf-active{{ end }}">
+      {{- $item.Name -}}
+    </a>
+  {{ else }}
+    <span class="bf-menu-label">{{- $item.Name -}}</span>
+  {{ end }}
+
+  {{ with $item.Resources }}
+    {{ if $expanded }}
+    <ul class="bf-submenu">
+      {{ range sort . "Params.weight" }}
+        {{ template "book-menu-item" (dict "Item" . "Current" $current) }}
+      {{ end }}
+    </ul>
+    {{ end }}
+  {{ end }}
+{{ end }} 

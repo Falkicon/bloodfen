@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section id="main" class="bf-wrapper">
+	<div class="bf-inner">
+		<header class="bf-major">
+			<h1>{{ .Title }}</h1>
+		</header>
+		<div class="bf-content">
+			{{ .Content }}
+			
+			<div class="bf-features">
+				{{ range .Pages }}
+				<article class="bf-feature-item">
+					<a href="{{ .RelPermalink }}" class="bf-image">
+						{{ if .Params.image }}
+						<img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" />
+						{{ else }}
+						<img src="{{ "images/pic01.jpg" | relURL }}" alt="{{ .Title }}" />
+						{{ end }}
+					</a>
+					<div class="bf-inner">
+						<h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+						<p>{{ .Summary }}</p>
+					</div>
+				</article>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+</section>
+{{ end }} 

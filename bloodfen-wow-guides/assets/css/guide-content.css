@@ -1,0 +1,434 @@
+/* Guide Content Typography Enhancements */
+
+/* Main content container */
+.guide-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Guide header */
+.guide-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.guide-header h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: none;
+  position: relative;
+  padding-bottom: 1rem;
+  color: #f39c12;
+}
+
+.guide-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #f39c12, transparent);
+}
+
+/* Hide the first h1 in the content if it matches the title */
+.guide-body h1:first-child {
+  display: none;
+}
+
+/* Hide the second h1 if it contains "WoW Season 2" and is similar to the title */
+.guide-body h1:nth-child(2) {
+  display: none;
+}
+
+/* Section spacing */
+.guide-body > section {
+  margin-bottom: 3rem;
+}
+
+/* Heading hierarchy improvements */
+.guide-body h2 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #f39c12;
+  border-bottom: 1px solid rgba(243, 156, 18, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.guide-body h3 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f7bf30;
+}
+
+.guide-body h4 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #fbdf94;
+}
+
+/* Paragraph spacing */
+.guide-body p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+/* List improvements */
+.guide-body ul,
+.guide-body ol {
+  margin: 1.25rem 0;
+  padding-left: 2.5rem;
+}
+
+.guide-body ul li,
+.guide-body ol li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.guide-body ul {
+  list-style: none;
+}
+
+.guide-body ul li::before {
+  content: "•";
+  color: #3498db;
+  font-weight: bold;
+  position: absolute;
+  left: -1.25rem;
+}
+
+.guide-body ol {
+  counter-reset: item;
+  list-style: none;
+}
+
+.guide-body ol li {
+  counter-increment: item;
+}
+
+.guide-body ol li::before {
+  content: counter(item) ".";
+  color: #3498db;
+  font-weight: bold;
+  position: absolute;
+  left: -1.5rem;
+}
+
+/* Numbered sections (1. Story Quest Rewards, etc.) */
+.guide-body h3:has(+ p) + p {
+  margin-top: 1rem;
+}
+
+/* Numbered headings with numbers */
+.guide-body h3:nth-of-type(1),
+.guide-body h3:nth-of-type(2),
+.guide-body h3:nth-of-type(3),
+.guide-body h3:nth-of-type(4),
+.guide-body h3:nth-of-type(5),
+.guide-body h3:nth-of-type(6) {
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(247, 191, 48, 0.2);
+}
+
+/* Nested lists */
+.guide-body li > ul,
+.guide-body li > ol {
+  margin: 0.75rem 0 0.75rem 0;
+}
+
+/* Definition lists */
+.guide-body dl {
+  margin: 1.5rem 0;
+}
+
+.guide-body dt {
+  font-weight: 700;
+  color: #f7bf30;
+  margin-top: 1rem;
+}
+
+.guide-body dd {
+  margin-left: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Table improvements */
+.guide-body table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.guide-body thead {
+  background-color: rgba(52, 152, 219, 0.2);
+}
+
+.guide-body th {
+  background-color: rgba(52, 152, 219, 0.3);
+  color: #ecf0f1;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid rgba(52, 152, 219, 0.5);
+}
+
+.guide-body td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(189, 195, 199, 0.2);
+  vertical-align: middle;
+}
+
+.guide-body tr:nth-child(even) {
+  background-color: rgba(30, 35, 40, 0.4);
+}
+
+.guide-body tr:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Blockquote styling */
+.guide-body blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+  border-radius: 0 5px 5px 0;
+  position: relative;
+}
+
+.guide-body blockquote::before {
+  content: "\201C";
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  color: rgba(52, 152, 219, 0.2);
+}
+
+/* Code blocks */
+.guide-body pre {
+  background-color: rgba(20, 25, 30, 0.9);
+  border-radius: 5px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.guide-body code {
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  color: #e74c3c;
+  background-color: rgba(30, 35, 40, 0.6);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.guide-body pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #ecf0f1;
+}
+
+/* Horizontal rule */
+.guide-body hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(52, 152, 219, 0.5), transparent);
+  margin: 2.5rem 0;
+}
+
+/* Images */
+.guide-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 1.5rem 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.guide-body figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.guide-body figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #bdc3c7;
+  font-style: italic;
+}
+
+/* Notes and warnings */
+.guide-body .note,
+.guide-body .warning,
+.guide-body .tip {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.guide-body .note {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-left: 4px solid #3498db;
+}
+
+.guide-body .warning {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid #e74c3c;
+}
+
+.guide-body .tip {
+  background-color: rgba(46, 204, 113, 0.1);
+  border-left: 4px solid #2ecc71;
+}
+
+.guide-body .note::before,
+.guide-body .warning::before,
+.guide-body .tip::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 1.25rem;
+  top: 1rem;
+  font-size: 1.25rem;
+}
+
+.guide-body .note::before {
+  content: "\f05a"; /* info icon */
+  color: #3498db;
+}
+
+.guide-body .warning::before {
+  content: "\f071"; /* warning icon */
+  color: #e74c3c;
+}
+
+.guide-body .tip::before {
+  content: "\f0eb"; /* lightbulb icon */
+  color: #2ecc71;
+}
+
+/* Class-specific styling */
+.guide-body .class-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 5px;
+  border-left: 4px solid;
+  background-color: rgba(30, 35, 40, 0.6);
+}
+
+.guide-body .class-warrior { border-color: #C79C6E; }
+.guide-body .class-paladin { border-color: #F58CBA; }
+.guide-body .class-hunter { border-color: #ABD473; }
+.guide-body .class-rogue { border-color: #FFF569; }
+.guide-body .class-priest { border-color: #FFFFFF; }
+.guide-body .class-shaman { border-color: #0070DE; }
+.guide-body .class-mage { border-color: #69CCF0; }
+.guide-body .class-warlock { border-color: #9482C9; }
+.guide-body .class-monk { border-color: #00FF96; }
+.guide-body .class-druid { border-color: #FF7D0A; }
+.guide-body .class-demon-hunter { border-color: #A330C9; }
+.guide-body .class-death-knight { border-color: #C41F3B; }
+.guide-body .class-evoker { border-color: #33937F; }
+
+/* Table of contents */
+.guide-body .toc {
+  background-color: rgba(30, 35, 40, 0.6);
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.guide-body .toc-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f39c12;
+  text-align: center;
+}
+
+.guide-body .toc ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.guide-body .toc li {
+  margin-bottom: 0.5rem;
+}
+
+.guide-body .toc li::before {
+  content: none;
+}
+
+.guide-body .toc a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: none;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.guide-body .toc a:hover {
+  color: #66b3f1;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .guide-content {
+    padding: 3.5rem 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .guide-header h1 {
+    font-size: 2.25rem;
+  }
+  
+  .guide-body h2 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+  }
+  
+  .guide-body h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }
+  
+  .guide-body h4 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .guide-body table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .guide-body blockquote {
+    padding: 1rem 1.5rem;
+  }
+  
+  .guide-body blockquote::before {
+    font-size: 3rem;
+  }
+} 

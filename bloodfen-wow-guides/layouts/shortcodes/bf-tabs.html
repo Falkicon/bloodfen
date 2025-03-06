@@ -1,0 +1,41 @@
+{{ $id := .Get "id" | default (printf "tabs-%d" (now.UnixNano)) }}
+<div class="bf-tabs" id="{{ $id }}">
+  <div class="bf-tabs-nav">
+    {{ range $index, $tab := .Scratch.Get "tabs" }}
+      <button class="bf-tab-button{{ if eq $index 0 }} active{{ end }}" data-tab="{{ $index }}">{{ $tab.name }}</button>
+    {{ end }}
+  </div>
+  <div class="bf-tabs-content">
+    {{ range $index, $tab := .Scratch.Get "tabs" }}
+      <div class="bf-tab-pane{{ if eq $index 0 }} active{{ end }}" data-tab="{{ $index }}">
+        {{ $tab.content | markdownify }}
+      </div>
+    {{ end }}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabsContainer = document.getElementById('{{ $id }}');
+  if (!tabsContainer) return;
+  
+  const tabButtons = tabsContainer.querySelectorAll('.bf-tab-button');
+  const tabPanes = tabsContainer.querySelectorAll('.bf-tab-pane');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const tabIndex = this.getAttribute('data-tab');
+      
+      // Remove active class from all buttons and panes
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabPanes.forEach(pane => pane.classList.remove('active'));
+      
+      // Add active class to current button and pane
+      this.classList.add('active');
+      tabsContainer.querySelector(`.bf-tab-pane[data-tab="${tabIndex}"]`).classList.add('active');
+    });
+  });
+});
+</script>
+
+{{ .Inner }} 

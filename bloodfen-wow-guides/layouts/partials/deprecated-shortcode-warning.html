@@ -1,0 +1,9 @@
+{{/* 
+  This partial displays a warning in the console when a deprecated shortcode is used.
+  It takes a dict with 'old' and 'new' keys for the shortcode names.
+*/}}
+{{ if hugo.IsProduction }}
+  {{ warnf "Deprecated shortcode %q used. Please use %q instead." .old .new }}
+{{ else }}
+  {{ warnf "Deprecated shortcode %q used. Please use %q instead." .old .new }}
+{{ end }} 

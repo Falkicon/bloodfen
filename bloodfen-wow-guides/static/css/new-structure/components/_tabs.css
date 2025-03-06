@@ -1,0 +1,159 @@
+/* 
+ * Bloodfen Guides - Tab Styles
+ * Contains all tab-related styles
+ */
+
+/* Base tabs container */
+.bf-tabs {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+}
+
+/* Tabs navigation */
+.bf-tabs-nav {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid #333;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+/* Tab button */
+.bf-tab-button {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bf-tab-button:hover {
+  color: #fff;
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.bf-tab-button.active {
+  color: var(--bf-highlight);
+  background-color: rgba(255, 215, 0, 0.15);
+}
+
+.bf-tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--bf-highlight);
+}
+
+/* Tabs content */
+.bf-tabs-content {
+  padding: 20px;
+}
+
+/* Tab pane */
+.bf-tab-pane {
+  display: none;
+}
+
+.bf-tab-pane.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Vertical tabs */
+.bf-tabs-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .bf-tabs-vertical {
+    flex-direction: row;
+  }
+  
+  .bf-tabs-vertical .bf-tabs-nav {
+    flex-direction: column;
+    min-width: 200px;
+    border-bottom: none;
+    border-right: 1px solid #333;
+  }
+  
+  .bf-tabs-vertical .bf-tab-button {
+    text-align: left;
+    padding: 15px 20px;
+  }
+  
+  .bf-tabs-vertical .bf-tab-button.active::after {
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: -1px;
+    width: 3px;
+    height: 100%;
+  }
+  
+  .bf-tabs-vertical .bf-tabs-content {
+    flex: 1;
+  }
+}
+
+/* Pills style tabs */
+.bf-tabs-pills .bf-tabs-nav {
+  background-color: transparent;
+  border-bottom: none;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.bf-tabs-pills .bf-tab-button {
+  border-radius: 30px;
+  padding: 8px 16px;
+}
+
+.bf-tabs-pills .bf-tab-button.active {
+  background-color: var(--bf-highlight);
+  color: #000;
+}
+
+.bf-tabs-pills .bf-tab-button.active::after {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bf-tabs-nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  
+  .bf-tab-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .bf-tabs-content {
+    padding: 15px;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} 

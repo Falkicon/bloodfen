@@ -1,5 +1,8 @@
 // Bloodfen Theme JavaScript
 
+// Set a variable to indicate this file has loaded
+window.bfThemeJsLoaded = true;
+
 document.addEventListener('DOMContentLoaded', function () {
   // Cache DOM elements
   const mobileMenuToggle = document.querySelector('.bf-mobile-menu-toggle');

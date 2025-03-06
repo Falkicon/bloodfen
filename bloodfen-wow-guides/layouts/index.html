@@ -2,7 +2,7 @@
 <!-- Banner Image with Text Overlay -->
 <div class="bf-hero-fullscreen">
 	<!-- Banner Image -->
-	<img src="/images/banner-bloodfen.png" alt="Bloodfen Banner">
+	<img src="{{ .Site.BaseURL }}images/banner-bloodfen.png" alt="Bloodfen Banner">
 	
 	<!-- Gradient Overlay -->
 	<div class="bf-hero-overlay"></div>
@@ -19,96 +19,80 @@
 	</div>
 </div>
 
-<!-- All Guides Section -->
-<section class="bf-section rounded-t-3xl pt-16 pb-24 bg-bf-bg relative z-30">
+<!-- Featured Guides Section -->
+<section class="bf-section bf-featured-guides">
 	<div class="bf-container">
-		<div class="section-header text-center mb-12">
-			<h2 class="font-heading text-3xl">Season 2 Guides</h2>
-		</div>
+		<h2 class="bf-section-title">Season 2 Guides</h2>
+		<p class="bf-section-subtitle">Essential resources for The War Within</p>
 		
-		<!-- Using our enhanced grid system -->
-		<div class="bf-grid bf-grid-cols-3 bf-grid-gap-md">
-			<!-- First Week Activities Guide -->
-			<div class="bf-grid-item">
-				<div class="bf-card h-full">
-					<div class="bf-card-content">
-						<span class="card-badge badge-essential">Essential</span>
-						<h3 class="card-title font-heading"><a href="/world-of-warcraft/the-war-within/first-week-activities/">First Week Activities & Checklist</a></h3>
-						<p class="card-summary">A comprehensive checklist and strategy for your first week in Season 2. Efficiently kickstart your character's progression.</p>
-						<a href="/world-of-warcraft/the-war-within/first-week-activities/" class="card-read-more">Read More <span class="arrow">→</span></a>
-					</div>
+		<div class="bf-grid-container">
+			<!-- First Week Activities & Checklist -->
+			<div class="bf-card">
+				<div class="bf-card-content">
+					<span class="bf-card-tag">Essential</span>
+					<h3 class="bf-card-title">First Week Activities & Checklist</h3>
+					<p class="bf-card-description">A comprehensive checklist and strategy for your first week in Season 2. Efficiently kickstart your character's progression.</p>
+					<a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/first-week-activities/" class="bf-button">Read More →</a>
 				</div>
 			</div>
 			
 			<!-- Delves & World Content Guide -->
-			<div class="bf-grid-item">
-				<div class="bf-card h-full">
-					<div class="bf-card-content">
-						<span class="card-badge badge-world">World Content</span>
-						<h3 class="card-title font-heading"><a href="/world-of-warcraft/the-war-within/delves-world-content/">Delves & World Content Guide</a></h3>
-						<p class="card-summary">Everything you need to know about solo/duo progression through Delves and maximizing rewards from world activities.</p>
-						<a href="/world-of-warcraft/the-war-within/delves-world-content/" class="card-read-more">Read More <span class="arrow">→</span></a>
-					</div>
+			<div class="bf-card">
+				<div class="bf-card-content">
+					<span class="bf-card-tag">World Content</span>
+					<h3 class="bf-card-title">Delves & World Content Guide</h3>
+					<p class="bf-card-description">Everything you need to know about solo/duo progression through Delves and maximizing rewards from world activities.</p>
+					<a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/delves-world-content/" class="bf-button">Read More →</a>
 				</div>
 			</div>
 			
 			<!-- Mythic+ Dungeon Guide -->
-			<div class="bf-grid-item">
-				<div class="bf-card h-full">
-					<div class="bf-card-content">
-						<span class="card-badge badge-endgame">Endgame</span>
-						<h3 class="card-title font-heading"><a href="/world-of-warcraft/the-war-within/mythic-plus-dungeons/">Mythic+ Dungeon Guide</a></h3>
-						<p class="card-summary">Master the revamped dungeon rotation, smoother difficulty scaling, and restructured affix system in Season 2.</p>
-						<a href="/world-of-warcraft/the-war-within/mythic-plus-dungeons/" class="card-read-more">Read More <span class="arrow">→</span></a>
-					</div>
+			<div class="bf-card">
+				<div class="bf-card-content">
+					<span class="bf-card-tag">Endgame</span>
+					<h3 class="bf-card-title">Mythic+ Dungeon Guide</h3>
+					<p class="bf-card-description">Master the revamped dungeon rotation, smoother difficulty scaling, and restructured affix system in Season 2.</p>
+					<a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/mythic-plus-dungeons/" class="bf-button">Read More →</a>
 				</div>
 			</div>
 			
-			<!-- Raid Guide -->
-			<div class="bf-grid-item">
-				<div class="bf-card h-full">
-					<div class="bf-card-content">
-						<span class="card-badge badge-endgame">Endgame</span>
-						<h3 class="card-title font-heading"><a href="/world-of-warcraft/the-war-within/raid-guide/">Liberation of Undermine Raid Guide</a></h3>
-						<p class="card-summary">Prepare for and conquer the new 8-boss raid with strategies for each encounter and loot priorities.</p>
-						<a href="/world-of-warcraft/the-war-within/raid-guide/" class="card-read-more">Read More <span class="arrow">→</span></a>
-					</div>
+			<!-- Liberation of Undermine Raid Guide -->
+			<div class="bf-card">
+				<div class="bf-card-content">
+					<span class="bf-card-tag">Endgame</span>
+					<h3 class="bf-card-title">Liberation of Undermine Raid Guide</h3>
+					<p class="bf-card-description">Prepare for and conquer the new 8-boss raid with strategies for each encounter and loot priorities.</p>
+					<a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/raid-guide/" class="bf-button">Read More →</a>
 				</div>
 			</div>
 			
 			<!-- PvP Guide -->
-			<div class="bf-grid-item">
-				<div class="bf-card h-full">
-					<div class="bf-card-content">
-						<span class="card-badge badge-pvp">PvP</span>
-						<h3 class="card-title font-heading"><a href="/world-of-warcraft/the-war-within/pvp-guide/">PvP Guide</a></h3>
-						<p class="card-summary">Everything you need to know to succeed in both casual and competitive PvP during Season 2.</p>
-						<a href="/world-of-warcraft/the-war-within/pvp-guide/" class="card-read-more">Read More <span class="arrow">→</span></a>
-					</div>
+			<div class="bf-card">
+				<div class="bf-card-content">
+					<span class="bf-card-tag">PvP</span>
+					<h3 class="bf-card-title">PvP Guide</h3>
+					<p class="bf-card-description">Everything you need to know to succeed in both casual and competitive PvP during Season 2.</p>
+					<a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/pvp-guide/" class="bf-button">Read More →</a>
 				</div>
 			</div>
 			
 			<!-- Gear & Meta Guide -->
-			<div class="bf-grid-item">
-				<div class="bf-card h-full">
-					<div class="bf-card-content">
-						<span class="card-badge badge-essential">Essential</span>
-						<h3 class="card-title font-heading"><a href="/world-of-warcraft/the-war-within/gear-meta-guide/">Gear & Meta Guide</a></h3>
-						<p class="card-summary">Efficiently gear your character and understand the current state of class performance across all content types.</p>
-						<a href="/world-of-warcraft/the-war-within/gear-meta-guide/" class="card-read-more">Read More <span class="arrow">→</span></a>
-					</div>
+			<div class="bf-card">
+				<div class="bf-card-content">
+					<span class="bf-card-tag">Essential</span>
+					<h3 class="bf-card-title">Gear & Meta Guide</h3>
+					<p class="bf-card-description">Efficiently gear your character and understand the current state of class performance across all content types.</p>
+					<a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/gear-meta-guide/" class="bf-button">Read More →</a>
 				</div>
 			</div>
 			
 			<!-- Crafting & Professions Guide -->
-			<div class="bf-grid-item">
-				<div class="bf-card h-full">
-					<div class="bf-card-content">
-						<span class="card-badge badge-world">World Content</span>
-						<h3 class="card-title font-heading"><a href="/world-of-warcraft/the-war-within/crafting-professions/">Crafting & Professions Guide</a></h3>
-						<p class="card-summary">Master the key changes to crafting, optimal profession combinations, and strategies for maximizing your crafting potential.</p>
-						<a href="/world-of-warcraft/the-war-within/crafting-professions/" class="card-read-more">Read More <span class="arrow">→</span></a>
-					</div>
+			<div class="bf-card">
+				<div class="bf-card-content">
+					<span class="bf-card-tag">World Content</span>
+					<h3 class="bf-card-title">Crafting & Professions Guide</h3>
+					<p class="bf-card-description">Master the key changes to crafting, optimal profession combinations, and strategies for maximizing your crafting potential.</p>
+					<a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/crafting-professions/" class="bf-button">Read More →</a>
 				</div>
 			</div>
 		</div>

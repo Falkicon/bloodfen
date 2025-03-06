@@ -26,17 +26,17 @@
 		
 		<!-- Styles -->
 		<!-- Bloodfen CSS Framework -->
-		<link rel="stylesheet" href="/css/tailwind.css">
-		<link rel="stylesheet" href="/css/new-structure/main.css">
+		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/tailwind.css">
+		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/new-structure/main.css">
 		
 		<!-- Font Awesome for icons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 		
 		<!-- Favicons -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-		<link rel="shortcut icon" href="/icons/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}icons/favicon-16x16.png">
+		<link rel="shortcut icon" href="{{ .Site.BaseURL }}icons/favicon.ico">
 		
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,7 +66,7 @@
 		<header class="bf-header fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md" role="banner">
 			<div class="bf-container bf-header-container flex items-center justify-between py-4">
 				<div class="bf-logo">
-					<a href="/" class="bf-logo-link" aria-label="Bloodfen Guides Home">
+					<a href="{{ .Site.BaseURL }}" class="bf-logo-link" aria-label="Bloodfen Guides Home">
 						<span class="bf-logo-text ml-2">BLOODFEN
 						Guides</span>
 					</a>
@@ -75,7 +75,7 @@
 					<ul class="bf-nav-list" role="menubar">
 						{{ range .Site.Menus.main }}
 						<li class="bf-nav-item" role="none">
-							<a href="{{ .URL }}" class="bf-nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}" role="menuitem" {{ if $.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a>
+							<a href="{{ .URL | absURL }}" class="bf-nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}" role="menuitem" {{ if $.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a>
 						</li>
 						{{ end }}
 					</ul>
@@ -94,7 +94,7 @@
 					<ul class="bf-mobile-nav-list" role="menu">
 						{{ range .Site.Menus.main }}
 						<li role="none">
-							<a href="{{ .URL }}" class="bf-mobile-nav-link" role="menuitem" {{ if $.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a>
+							<a href="{{ .URL | absURL }}" class="bf-mobile-nav-link" role="menuitem" {{ if $.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a>
 						</li>
 						{{ end }}
 					</ul>
@@ -120,13 +120,13 @@
 					<div class="bf-footer-column">
 						<h4 id="footer-guides">Guides</h4>
 						<ul aria-labelledby="footer-guides">
-							<li><a href="/world-of-warcraft/the-war-within/first-week-activities/">First Week Activities</a></li>
-							<li><a href="/world-of-warcraft/the-war-within/delves-world-content/">Delves & World Content</a></li>
-							<li><a href="/world-of-warcraft/the-war-within/mythic-plus-dungeons/">Mythic+ Dungeons</a></li>
-							<li><a href="/world-of-warcraft/the-war-within/raid-guide/">Liberation of Undermine</a></li>
-							<li><a href="/world-of-warcraft/the-war-within/pvp-guide/">PvP Guide</a></li>
-							<li><a href="/world-of-warcraft/the-war-within/gear-meta-guide/">Gear & Meta Guide</a></li>
-							<li><a href="/world-of-warcraft/the-war-within/crafting-professions/">Crafting & Professions</a></li>
+							<li><a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/first-week-activities/">First Week Activities</a></li>
+							<li><a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/delves-world-content/">Delves & World Content</a></li>
+							<li><a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/mythic-plus-dungeons/">Mythic+ Dungeons</a></li>
+							<li><a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/raid-guide/">Liberation of Undermine</a></li>
+							<li><a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/pvp-guide/">PvP Guide</a></li>
+							<li><a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/gear-meta-guide/">Gear & Meta Guide</a></li>
+							<li><a href="{{ .Site.BaseURL }}world-of-warcraft/the-war-within/crafting-professions/">Crafting & Professions</a></li>
 						</ul>
 					</div>
 					<div class="bf-footer-column">
@@ -143,8 +143,8 @@
 						World of Warcraft® and Blizzard Entertainment® are all trademarks or registered trademarks of Blizzard Entertainment in the United States and/or other countries. These terms and all related materials, logos, and images are copyright © Blizzard Entertainment. This site is in no way associated with or endorsed by Blizzard Entertainment®.
 					</div>
 					<div class="bf-footer-links">
-						<a href="/privacy" class="bf-footer-link">Privacy Policy</a>
-						<a href="/terms" class="bf-footer-link">Terms of Use</a>
+						<a href="{{ .Site.BaseURL }}privacy" class="bf-footer-link">Privacy Policy</a>
+						<a href="{{ .Site.BaseURL }}terms" class="bf-footer-link">Terms of Use</a>
 					</div>
 				</div>
 			</div>
@@ -156,7 +156,7 @@
 		</a>
 		
 		<!-- JavaScript -->
-		<script src="/js/main.js" defer></script>
-		<script src="/js/bf-theme.js" defer></script>
+		<script type="application/javascript" src="{{ .Site.BaseURL }}js/main.js" defer></script>
+		<script type="application/javascript" src="{{ .Site.BaseURL }}js/bf-theme.js" defer></script>
 	</body>
 </html> 

@@ -1,0 +1,140 @@
+/* 
+ * Bloodfen Guides - Cards Component
+ */
+
+ .bf-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-color: rgba(31, 41, 55, 0.3);
+    background-color: rgba(30, 35, 40, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+  }
+  
+  .bf-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(52, 152, 219, 0.2);
+  }
+  
+  .bf-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.25rem;
+    width: 100%;
+    background-color: rgb(52, 152, 219);
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+  }
+  
+  .bf-card:hover::before {
+    opacity: 1;
+  }
+  
+  .bf-card:hover {
+    transform: translateY(-0.25rem);
+  }
+  
+  .bf-card-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  /* Card tags - default style */
+  .bf-card-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Essential tag (blue) */
+  .bf-card-tag {
+    background-color: rgba(52, 152, 219, 0.2);
+    color: rgb(52, 152, 219);
+  }
+  
+  /* Endgame tag (red) */
+  .bf-card:nth-child(3) .bf-card-tag,
+  .bf-card:nth-child(4) .bf-card-tag {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: rgb(231, 76, 60);
+  }
+  
+  /* World Content tag (green) */
+  .bf-card:nth-child(2) .bf-card-tag,
+  .bf-card:nth-child(7) .bf-card-tag {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: rgb(46, 204, 113);
+  }
+  
+  /* PvP tag (blue) */
+  .bf-card:nth-child(5) .bf-card-tag {
+    background-color: rgba(52, 152, 219, 0.2);
+    color: rgb(52, 152, 219);
+  }
+  
+  .bf-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--bf-heading);
+  }
+  
+  .bf-card-description {
+    color: var(--bf-text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .bf-button {
+    display: inline-block;
+    background-color: var(--bf-primary);
+    color: white;
+    font-weight: 600;
+    padding: 0;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-self: flex-start;
+  }
+  
+  .bf-button:hover {
+    background-color: var(--bf-primary-dark);
+  }
+  
+  /* Grid container for cards */
+  .bf-grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  @media (min-width: 640px) {
+    .bf-grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .bf-grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

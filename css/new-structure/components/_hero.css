@@ -287,4 +287,20 @@
   to {
     opacity: 1;
   }
+}
+
+/* Section titles and subtitles */
+.bf-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--bf-heading);
+  text-align: center;
+}
+
+.bf-section-subtitle {
+  font-size: 1.25rem;
+  color: var(--bf-text-secondary);
+  margin-bottom: 2rem;
+  text-align: center;
 } 

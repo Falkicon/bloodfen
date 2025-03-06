@@ -12,11 +12,15 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           submodules: false  # Don't fetch Hugo themes as submodules
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
+          
+      - name: Create empty .gitmodules file
+        run: touch .gitmodules
+        
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -44,4 +48,4 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./bloodfen-wow-guides/public
+          publish_dir: ./bloodfen-wow-guides/public 

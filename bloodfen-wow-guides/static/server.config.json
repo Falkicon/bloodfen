@@ -1,0 +1,6 @@
+{
+  "mimeTypes": {
+    "text/css": ["css"],
+    "application/javascript": ["js"]
+  }
+} 

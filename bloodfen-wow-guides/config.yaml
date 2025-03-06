@@ -3,6 +3,26 @@ languageCode: "en-us"
 title: "Bloodfen Guides"
 theme: "spectral"
 
+# Media Types
+mediaTypes:
+  text/css:
+    suffixes: ["css"]
+  application/javascript:
+    suffixes: ["js"]
+
+# Output Formats
+outputFormats:
+  CSS:
+    mediaType: text/css
+    path: css
+    isPlainText: true
+    notAlternative: true
+  JS:
+    mediaType: application/javascript
+    path: js
+    isPlainText: true
+    notAlternative: true
+
 # Disable Google Analytics
 googleAnalytics: ""
 

@@ -1,0 +1,156 @@
+/* 
+ * Bloodfen Guides - Wowhead Styles
+ * Contains all Wowhead integration-related styles
+ */
+
+/* Wowhead Link Styles */
+.bf-wowhead-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 2px;
+  white-space: nowrap;
+}
+
+.bf-wowhead-icon {
+  display: inline-block;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bf-wowhead-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.bf-wowhead-name {
+  font-weight: 500;
+}
+
+/* Item Quality Colors */
+.bf-poor-quality .bf-wowhead-name {
+  color: var(--quality-poor) !important;
+}
+
+.bf-common-quality .bf-wowhead-name {
+  color: var(--quality-common) !important;
+}
+
+.bf-uncommon-quality .bf-wowhead-name {
+  color: var(--quality-uncommon) !important;
+}
+
+.bf-rare-quality .bf-wowhead-name {
+  color: var(--quality-rare) !important;
+}
+
+.bf-epic-quality .bf-wowhead-name {
+  color: var(--quality-epic) !important;
+}
+
+.bf-legendary-quality .bf-wowhead-name {
+  color: var(--quality-legendary) !important;
+}
+
+.bf-artifact-quality .bf-wowhead-name {
+  color: var(--quality-artifact) !important;
+}
+
+.bf-heirloom-quality .bf-wowhead-name {
+  color: var(--quality-heirloom) !important;
+}
+
+/* NPC styling */
+.bf-npc {
+  color: #ffd100 !important;
+  font-weight: bold;
+}
+
+/* Tooltip container - for future use */
+.bf-wowhead-tooltip {
+  position: absolute;
+  display: none;
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1000;
+  max-width: 300px;
+}
+
+/* Override Wowhead's default styles */
+a[data-wowhead] {
+  text-decoration: none !important;
+}
+
+/* Fix for Wowhead icons */
+.iconmedium, .iconsmall {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Wowhead item link with icon */
+.bf-item-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-item-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Wowhead spell link with icon */
+.bf-spell-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-spell-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bf-spell-link .bf-wowhead-name {
+  color: #71d5ff !important;
+}
+
+/* Wowhead achievement link with icon */
+.bf-achievement-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-achievement-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bf-achievement-link .bf-wowhead-name {
+  color: #ffff00 !important;
+}
+
+/* Dark mode adjustments */
+html[data-theme="dark"] .bf-common-quality .bf-wowhead-name {
+  color: #f0f0f0 !important;
+}
+
+html[data-theme="dark"] .bf-wowhead-tooltip {
+  filter: brightness(0.8);
+} 

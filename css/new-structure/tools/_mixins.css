@@ -1,0 +1,121 @@
+/* 
+ * Bloodfen Guides - CSS Mixins
+ * Contains useful CSS custom properties and functions
+ */
+
+/* 
+ * Note: True CSS mixins don't exist yet, but we can use custom properties
+ * as a way to store reusable values. This file will be more useful when
+ * CSS @property and future CSS features become more widely supported.
+ */
+
+:root {
+  /* Truncate text with ellipsis */
+  --truncate: {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  };
+
+  /* Center content with flexbox */
+  --center-flex: {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  };
+
+  /* Center content absolutely */
+  --center-absolute: {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  };
+
+  /* Standard transition */
+  --transition-standard: {
+    transition-property: all;
+    transition-timing-function: var(--bf-transition-ease);
+    transition-duration: var(--bf-transition-speed);
+  };
+
+  /* Focus styles */
+  --focus-ring: {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bf-highlight);
+  };
+
+  /* Card styles */
+  --card-base: {
+    background-color: var(--bf-card-bg);
+    border-radius: var(--bf-border-radius);
+    overflow: hidden;
+    box-shadow: var(--bf-shadow);
+  };
+
+  /* Hover effect */
+  --hover-lift: {
+    transform: translateY(-5px);
+    box-shadow: var(--bf-shadow-lg);
+  };
+}
+
+/* 
+ * Usage examples:
+ * 
+ * .element {
+ *   @apply --truncate;
+ * }
+ * 
+ * Note: The @apply rule is not yet widely supported.
+ * For now, we need to copy the properties manually:
+ * 
+ * .element {
+ *   overflow: hidden;
+ *   text-overflow: ellipsis;
+ *   white-space: nowrap;
+ * }
+ */
+
+/* Helper classes that implement the mixins */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.transition-standard {
+  transition-property: all;
+  transition-timing-function: var(--bf-transition-ease);
+  transition-duration: var(--bf-transition-speed);
+}
+
+/* Aspect ratio utility */
+.aspect-ratio-16-9 {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.aspect-ratio-16-9 > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} 

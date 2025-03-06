@@ -1,0 +1,192 @@
+/* 
+ * Bloodfen Guides - Link Styles
+ * Contains all link-related styles
+ */
+
+/* Base link styles */
+a {
+  color: var(--bf-link);
+  text-decoration: none;
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+a:hover {
+  color: var(--bf-link-hover);
+}
+
+/* Focus states */
+a:focus {
+  outline: 2px solid var(--bf-highlight);
+  outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--bf-highlight);
+  outline-offset: 2px;
+}
+
+/* Underlined links */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--bf-link-hover);
+  transition: width var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Button-style links */
+.link-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--bf-link);
+  color: #fff;
+  border-radius: var(--bf-border-radius);
+  transition: background-color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.link-button:hover {
+  background-color: var(--bf-link-hover);
+  color: #fff;
+}
+
+/* Icon links */
+.link-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link-icon .icon {
+  margin-left: 0.5rem;
+  transition: transform var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.link-icon:hover .icon {
+  transform: translateX(3px);
+}
+
+/* Navigation links */
+.bf-nav-link {
+  position: relative;
+  padding: 0.5rem 0;
+  color: var(--bf-text-primary);
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-nav-link:hover {
+  color: var(--bf-highlight);
+}
+
+.bf-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--bf-highlight);
+  transition: width var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-nav-link:hover::after,
+.bf-nav-link.active::after {
+  width: 100%;
+}
+
+/* Footer links */
+.bf-footer-link {
+  color: var(--bf-text-secondary);
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.bf-footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--bf-highlight);
+  transition: width var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-footer-link:hover {
+  color: var(--bf-highlight);
+}
+
+.bf-footer-link:hover::after {
+  width: 100%;
+}
+
+/* Card links */
+.card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  color: inherit;
+}
+
+/* Card title links */
+.card-title-link {
+  color: var(--bf-text-primary);
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.card-title-link:hover {
+  color: var(--bf-highlight);
+}
+
+/* External links */
+.external-link {
+  position: relative;
+  padding-right: 1.25em;
+}
+
+.external-link::after {
+  content: '↗';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.8em;
+  transition: transform var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.external-link:hover::after {
+  transform: translate(2px, -2px);
+}
+
+/* Skip link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--bf-highlight);
+  color: var(--bf-bg-dark);
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+} 

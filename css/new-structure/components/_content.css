@@ -1,0 +1,89 @@
+/* 
+ * Bloodfen Guides - Content Styles
+ * Contains styles for general content pages
+ */
+
+/* Content box */
+.bf-content-box {
+  background-color: var(--bf-card-bg);
+  border-radius: var(--bf-border-radius);
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Page title */
+.bf-page-title {
+  font-family: var(--bf-font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--bf-text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.bf-page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: var(--bf-highlight);
+}
+
+/* Content section */
+.bf-content-section {
+  margin-bottom: 2.5rem;
+}
+
+.bf-content-section:last-child {
+  margin-bottom: 0;
+}
+
+.bf-content-section h2 {
+  font-family: var(--bf-font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--bf-text-primary);
+  margin-bottom: 1rem;
+}
+
+.bf-content-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--bf-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.bf-content-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.bf-content-section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--bf-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bf-content-box {
+    padding: 1.5rem;
+  }
+  
+  .bf-page-title {
+    font-size: 2rem;
+  }
+  
+  .bf-content-section h2 {
+    font-size: 1.25rem;
+  }
+} 

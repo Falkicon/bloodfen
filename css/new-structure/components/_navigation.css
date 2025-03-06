@@ -1,0 +1,237 @@
+/* 
+ * Bloodfen Guides - Navigation Styles
+ * Contains all navigation-related styles
+ */
+
+/* Main navigation */
+.bf-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .bf-nav {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Navigation list */
+.bf-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bf-nav-list > * + * {
+  margin-left: 40px;
+}
+
+/* Navigation item */
+.bf-nav-item {
+  position: relative;
+}
+
+/* Navigation link */
+.bf-nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 0;
+  color: var(--bf-text-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-nav-link:hover,
+.bf-nav-link.active {
+  color: var(--bf-highlight);
+}
+
+.bf-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--bf-highlight);
+  transition: width var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-nav-link:hover::after,
+.bf-nav-link.active::after {
+  width: 100%;
+}
+
+/* Dropdown */
+.bf-dropdown {
+  position: relative;
+}
+
+.bf-dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.bf-dropdown-toggle::after {
+  content: '';
+  display: inline-block;
+  margin-left: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-dropdown.active .bf-dropdown-toggle::after {
+  transform: rotate(-135deg);
+}
+
+.bf-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--bf-border-radius);
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--bf-transition-speed) var(--bf-transition-ease);
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.bf-dropdown:hover .bf-dropdown-menu,
+.bf-dropdown.active .bf-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.bf-dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--bf-text-primary);
+  text-decoration: none;
+  transition: all var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-dropdown-item:hover,
+.bf-dropdown-item.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--bf-highlight);
+  padding-left: 1.25rem;
+}
+
+/* Breadcrumbs */
+.bf-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+
+.bf-breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.bf-breadcrumb-item:not(:last-child)::after {
+  content: '/';
+  margin: 0 0.5rem;
+  color: var(--bf-text-muted);
+}
+
+.bf-breadcrumb-link {
+  color: var(--bf-text-secondary);
+  text-decoration: none;
+  transition: color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-breadcrumb-link:hover {
+  color: var(--bf-highlight);
+}
+
+.bf-breadcrumb-item:last-child .bf-breadcrumb-link {
+  color: var(--bf-text-primary);
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* Pagination */
+.bf-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.bf-pagination-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bf-pagination-item {
+  margin: 0 0.25rem;
+}
+
+.bf-pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--bf-border-radius);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--bf-text-primary);
+  text-decoration: none;
+  transition: all var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-pagination-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--bf-highlight);
+}
+
+.bf-pagination-link.active {
+  background-color: var(--bf-highlight);
+  color: var(--bf-bg-dark);
+  font-weight: 600;
+}
+
+.bf-pagination-prev,
+.bf-pagination-next {
+  font-size: 1.25rem;
+}
+
+.bf-pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--bf-text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bf-breadcrumbs {
+    font-size: 0.75rem;
+  }
+  
+  .bf-pagination-link {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+} 

@@ -1,0 +1,152 @@
+/* 
+ * Bloodfen Guides - Color Utilities
+ * Contains all color-related utility classes
+ */
+
+/* Text colors */
+.text-primary { color: var(--bf-text-primary) !important; }
+.text-secondary { color: var(--bf-text-secondary) !important; }
+.text-muted { color: var(--bf-text-muted) !important; }
+.text-highlight { color: var(--bf-highlight) !important; }
+.text-link { color: var(--bf-link) !important; }
+.text-white { color: #ffffff !important; }
+.text-black { color: #000000 !important; }
+
+/* Background colors */
+.bg-dark { background-color: var(--bf-bg-dark) !important; }
+.bg-darker { background-color: var(--bf-bg-darker) !important; }
+.bg-main { background-color: var(--bf-bg) !important; }
+.bg-light { background-color: var(--bf-bg-light) !important; }
+.bg-highlight { background-color: var(--bf-highlight) !important; }
+.bg-transparent { background-color: transparent !important; }
+
+/* Background opacity variations */
+.bg-dark-90 { background-color: rgba(18, 20, 32, 0.9) !important; }
+.bg-dark-80 { background-color: rgba(18, 20, 32, 0.8) !important; }
+.bg-dark-70 { background-color: rgba(18, 20, 32, 0.7) !important; }
+.bg-dark-60 { background-color: rgba(18, 20, 32, 0.6) !important; }
+.bg-dark-50 { background-color: rgba(18, 20, 32, 0.5) !important; }
+.bg-dark-40 { background-color: rgba(18, 20, 32, 0.4) !important; }
+.bg-dark-30 { background-color: rgba(18, 20, 32, 0.3) !important; }
+.bg-dark-20 { background-color: rgba(18, 20, 32, 0.2) !important; }
+.bg-dark-10 { background-color: rgba(18, 20, 32, 0.1) !important; }
+
+/* Border colors */
+.border-primary { border-color: var(--bf-text-primary) !important; }
+.border-secondary { border-color: var(--bf-text-secondary) !important; }
+.border-highlight { border-color: var(--bf-highlight) !important; }
+.border-dark { border-color: rgba(0, 0, 0, 0.3) !important; }
+.border-light { border-color: rgba(255, 255, 255, 0.1) !important; }
+
+/* WoW class colors */
+.color-warrior { color: var(--class-warrior) !important; }
+.color-paladin { color: var(--class-paladin) !important; }
+.color-hunter { color: var(--class-hunter) !important; }
+.color-rogue { color: var(--class-rogue) !important; }
+.color-priest { color: var(--class-priest) !important; }
+.color-shaman { color: var(--class-shaman) !important; }
+.color-mage { color: var(--class-mage) !important; }
+.color-warlock { color: var(--class-warlock) !important; }
+.color-monk { color: var(--class-monk) !important; }
+.color-druid { color: var(--class-druid) !important; }
+.color-demon-hunter { color: var(--class-demon-hunter) !important; }
+.color-death-knight { color: var(--class-death-knight) !important; }
+.color-evoker { color: var(--class-evoker) !important; }
+
+/* WoW item quality colors */
+.color-poor { color: var(--quality-poor) !important; }
+.color-common { color: var(--quality-common) !important; }
+.color-uncommon { color: var(--quality-uncommon) !important; }
+.color-rare { color: var(--quality-rare) !important; }
+.color-epic { color: var(--quality-epic) !important; }
+.color-legendary { color: var(--quality-legendary) !important; }
+.color-artifact { color: var(--quality-artifact) !important; }
+.color-heirloom { color: var(--quality-heirloom) !important; }
+
+/* Functional colors */
+.color-success { color: var(--color-success) !important; }
+.color-info { color: var(--color-info) !important; }
+.color-warning { color: var(--color-warning) !important; }
+.color-danger { color: var(--color-danger) !important; }
+
+.bg-success { background-color: var(--color-success) !important; }
+.bg-info { background-color: var(--color-info) !important; }
+.bg-warning { background-color: var(--color-warning) !important; }
+.bg-danger { background-color: var(--color-danger) !important; }
+
+.bg-success-10 { background-color: rgba(46, 204, 113, 0.1) !important; }
+.bg-info-10 { background-color: rgba(52, 152, 219, 0.1) !important; }
+.bg-warning-10 { background-color: rgba(243, 156, 18, 0.1) !important; }
+.bg-danger-10 { background-color: rgba(231, 76, 60, 0.1) !important; }
+
+.border-success { border-color: var(--color-success) !important; }
+.border-info { border-color: var(--color-info) !important; }
+.border-warning { border-color: var(--color-warning) !important; }
+.border-danger { border-color: var(--color-danger) !important; }
+
+/* Gradients */
+.bg-gradient-dark {
+  background: linear-gradient(to bottom, var(--bf-bg-dark), var(--bf-bg-darker)) !important;
+}
+
+.bg-gradient-highlight {
+  background: linear-gradient(to right, var(--bf-highlight), var(--bf-highlight-dark)) !important;
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(to right, #3498db, #2980b9) !important;
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(to right, #9b59b6, #8e44ad) !important;
+}
+
+.bg-gradient-green {
+  background: linear-gradient(to right, #2ecc71, #27ae60) !important;
+}
+
+.bg-gradient-red {
+  background: linear-gradient(to right, #e74c3c, #c0392b) !important;
+}
+
+/* Text shadows */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Box shadows */
+.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.shadow-md {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.shadow-xl {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(52, 152, 219, 0.2) !important;
+}
+
+.shadow-highlight {
+  box-shadow: 0 0 15px rgba(243, 156, 18, 0.5) !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+} 

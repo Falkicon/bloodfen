@@ -1,0 +1,255 @@
+/* 
+ * Bloodfen Guides - Form Styles
+ * Contains all form-related styles
+ */
+
+/* Form elements */
+input,
+textarea,
+select,
+button {
+  font-family: var(--bf-font-base);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Form group */
+.bf-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.bf-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--bf-text-primary);
+}
+
+/* Form inputs */
+.bf-form-input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--bf-text-primary);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--bf-border-radius);
+  transition: border-color var(--bf-transition-speed) var(--bf-transition-ease),
+              box-shadow var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-form-input:focus {
+  outline: none;
+  border-color: var(--bf-link);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.bf-form-input::placeholder {
+  color: var(--bf-text-muted);
+  opacity: 0.7;
+}
+
+/* Form input states */
+.bf-form-input.error {
+  border-color: var(--color-danger);
+}
+
+.bf-form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+.bf-form-input.success {
+  border-color: var(--color-success);
+}
+
+.bf-form-input.success:focus {
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+/* Form validation message */
+.bf-form-message {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.bf-form-message.error {
+  color: var(--color-danger);
+}
+
+.bf-form-message.success {
+  color: var(--color-success);
+}
+
+/* Textarea */
+textarea.bf-form-input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Select */
+select.bf-form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23bdc3c7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+  padding-right: 2.5rem;
+}
+
+/* Checkbox and radio */
+.bf-form-checkbox,
+.bf-form-radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+.bf-form-checkbox input[type="checkbox"],
+.bf-form-radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.bf-form-checkbox-indicator,
+.bf-form-radio-indicator {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color var(--bf-transition-speed) var(--bf-transition-ease),
+              border-color var(--bf-transition-speed) var(--bf-transition-ease);
+}
+
+.bf-form-checkbox-indicator {
+  border-radius: 3px;
+}
+
+.bf-form-radio-indicator {
+  border-radius: 50%;
+}
+
+.bf-form-checkbox input[type="checkbox"]:checked ~ .bf-form-checkbox-indicator,
+.bf-form-radio input[type="radio"]:checked ~ .bf-form-radio-indicator {
+  background-color: var(--bf-link);
+  border-color: var(--bf-link);
+}
+
+.bf-form-checkbox input[type="checkbox"]:focus ~ .bf-form-checkbox-indicator,
+.bf-form-radio input[type="radio"]:focus ~ .bf-form-radio-indicator {
+  border-color: var(--bf-link);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.bf-form-checkbox-indicator::after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.bf-form-radio-indicator::after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.bf-form-checkbox input[type="checkbox"]:checked ~ .bf-form-checkbox-indicator::after,
+.bf-form-radio input[type="radio"]:checked ~ .bf-form-radio-indicator::after {
+  display: block;
+}
+
+/* Form actions */
+.bf-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.bf-form-actions > * + * {
+  margin-left: 1rem;
+}
+
+/* Newsletter form */
+.bf-newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.bf-newsletter-form .bf-form-input {
+  flex: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.bf-newsletter-form .bf-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Form disclaimer */
+.bf-form-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--bf-text-muted);
+  text-align: center;
+}
+
+.bf-form-disclaimer a {
+  color: var(--bf-text-secondary);
+  text-decoration: underline;
+}
+
+.bf-form-disclaimer a:hover {
+  color: var(--bf-link);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bf-newsletter-form {
+    flex-direction: column;
+  }
+  
+  .bf-newsletter-form .bf-form-input {
+    border-radius: var(--bf-border-radius);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.75rem;
+  }
+  
+  .bf-newsletter-form .bf-button {
+    border-radius: var(--bf-border-radius);
+    width: 100%;
+  }
+  
+  .bf-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .bf-form-actions > * + * {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+} 

@@ -1,0 +1,56 @@
+/* 
+ * Bloodfen Guides - Main CSS
+ * This file imports all modular CSS files in the correct order
+ */
+
+/* Settings - Variables, config */
+@import 'settings/_variables.css';
+@import 'settings/_breakpoints.css';
+
+/* Tools - Mixins, functions */
+@import 'tools/_mixins.css';
+
+/* Generic - Reset, normalize */
+@import 'generic/_reset.css';
+@import 'generic/_base.css';
+
+/* Elements - Base HTML elements */
+@import 'elements/_typography.css';
+@import 'elements/_links.css';
+@import 'elements/_buttons.css';
+@import 'elements/_forms.css';
+@import 'elements/_tables.css';
+
+/* Components - UI components */
+@import 'components/_header.css';
+@import 'components/_footer.css';
+@import 'components/_navigation.css';
+@import 'components/_cards.css';
+@import 'components/_tooltips.css';
+@import 'components/_callouts.css';
+@import 'components/_tabs.css';
+@import 'components/_accordion.css';
+@import 'components/_hero.css';
+@import 'components/_guides.css';
+@import 'components/_wowhead.css';
+@import 'components/_markdown.css';
+@import 'components/_content.css';
+
+/* Utilities - Helper classes */
+@import 'utilities/_spacing.css';
+@import 'utilities/_colors.css';
+@import 'utilities/_animations.css';
+@import 'utilities/_helpers.css';
+
+/* Syntax highlighting */
+@import '../syntax.css';
+
+/* Main content area */
+.bf-main {
+  min-height: calc(100vh - 300px); /* Adjust based on footer height */
+  padding-bottom: 64px;
+}
+
+.pt-20 {
+  padding-top: 0;
+} 
